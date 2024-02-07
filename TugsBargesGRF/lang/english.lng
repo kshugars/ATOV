@@ -1,0 +1,10 @@
+##grflangid 0x0
+STR_GRF_NAME	:{TITLE} - {VERSION}
+STR_GRF_DESC	:ATOV - Add to original vehicles. Adds tugboats and barges for bulk good, (coal, ore, grain...) and tugboats for lumber. Designed to be used with original vehicle set.
+STR_GRF_URL		:
+
+# vehicle names
+STR_WT1_NAME  :SKLabs Lumber Tug
+STR_WT2_NAME  :SKLabs Lumber Tug MK2
+STR_BT1_NAME  :SKLabs Barge Pusher
+STR_BT2_NAME  :SKLabs Barge Pusher MK2

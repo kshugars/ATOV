@@ -1,0 +1,312 @@
+grf {
+    grfid: "KS\03\25"; 
+	name: string(STR_GRF_NAME);	
+	desc: string(STR_GRF_DESC);
+	version: 0;
+	min_compatible_version: 0;
+	}
+	
+	cargotable{
+    COAL, GRAI, IORE, CORE, WHEA, MAIZ, SUGR, FRUT,
+    WOOD
+}
+
+	/*Lumber1*/
+	
+spriteset(spriteset_LumberTug1Empty, "gfx/LumberTug1Empty.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        16,    23,      -8,      -11]
+    [ 17,     0,       29,    21,     -29,       -0]
+    [ 47,     0,       33,    14,     -16,       -7]
+    [ 81,     0,       28,    16,      -0,       -0]
+    [ 110,    0,        16,    20,      -8,      -10]
+    [ 127,    0,       28,    16,     -28,       -0]
+    [ 156,    0,       33,    14,     -16,       -7]
+    [ 190,    0,       29,    21,      -0,       -0]
+	}
+	
+	spriteset(spriteset_LumberTug1Full, "gfx/LumberTug1Full.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        16,    35,      -8,      -17]
+    [ 17,     0,       43,    27,     -43,       -0]
+    [ 61,     0,       52,    14,     -26,       -7]
+    [ 114,     0,       38,    24,      -0,       -0]
+    [ 153,    0,        16,    28,      -8,      -14]
+    [ 170,    0,       39,    24,     -39,       -0]
+    [ 210,    0,       52,    14,     -21,       -7]
+    [ 263,    0,       42,    27,      -0,       -0]
+	}
+	
+	spritegroup spriteset_LumberTug1 {
+    loaded:  [spriteset_LumberTug1Empty, spriteset_LumberTug1Full];
+    loading: [spriteset_LumberTug1Empty, spriteset_LumberTug1Full];
+	}
+	
+item(FEAT_SHIPS, item_LumberTug1) {
+property{
+        name: string(STR_WT1_NAME);
+        introduction_date: date(1917, 10, 1);
+        model_life: 70;
+        vehicle_life: 30;
+        loading_speed: 10;
+        cost_factor: 100;
+        running_cost_factor: 60;
+        speed: 20 km/h;
+        cargo_capacity: 100;
+        climates_available: ALL_CLIMATES;
+        default_cargo_type: WOOD;
+        sprite_id: SPRITE_ID_NEW_SHIP;
+		sound_effect: SOUND_DEPARTURE_CARGO_SHIP;
+		}
+	    graphics {
+        default: spriteset_LumberTug1;
+		}
+	}
+	
+		/*Lumber2*/
+	
+spriteset(spriteset_LumberTug2Empty, "gfx/LumberTug2Empty.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        16,    23,      -8,      -11]
+    [ 17,     0,       29,    22,     -29,       -0]
+    [ 47,     0,       33,    19,     -16,       -9]
+    [ 81,     0,       28,    18,      -0,       -0]
+    [ 110,    0,        16,    20,      -8,      -10]
+    [ 127,    0,       28,    18,     -28,       -0]
+    [ 156,    0,       33,    19,     -16,       -9]
+    [ 190,    0,       29,    22,      -0,       -0]
+	}
+	
+	spriteset(spriteset_LumberTug2Full, "gfx/LumberTug2Full.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        16,    47,      -8,      -17]
+    [ 17,     0,       55,    35,     -55,       -0]
+    [ 73,     0,       71,    19,     -35,       -9]
+    [ 145,     0,       49,    31,      -0,       -0]
+    [ 195,    0,        16,    36,      -8,      -18]
+    [ 212,    0,       49,    31,     -49,       -0]
+    [ 262,    0,       71,    19,     -45,       -9]
+    [ 334,    0,       55,    35,      -0,       -0]
+	}
+	
+	spritegroup spriteset_LumberTug2 {
+    loaded:  [spriteset_LumberTug2Empty, spriteset_LumberTug2Full];
+    loading: [spriteset_LumberTug2Empty, spriteset_LumberTug2Full];
+	}
+	
+item(FEAT_SHIPS, item_LumberTug2) {
+property{
+        name: string(STR_WT2_NAME);
+        introduction_date: date(1960, 05, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        vehicle_life: 30;
+        loading_speed: 10;
+        cost_factor: 150;
+        running_cost_factor: 130;
+        speed: 45 km/h;
+        cargo_capacity: 170;
+        climates_available: ALL_CLIMATES;
+        default_cargo_type: WOOD;
+        sprite_id: SPRITE_ID_NEW_SHIP;
+		sound_effect: SOUND_DEPARTURE_CARGO_SHIP;
+		}
+	    graphics {
+        default: spriteset_LumberTug2;
+		}
+	}
+	
+	/*Barge1*/
+	
+template tmpl_Barge1(y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      y,        19,    37,      -9,      -18]
+    [ 20,     y,       51,    30,     -51,       -0]
+    [ 72,     y,       52,    15,     -26,       -7]
+    [ 125,     y,       51,    31,      -0,       -0]
+    [ 177,    y,        19,    35,      -9,      -17]
+    [ 197,    y,       51,    31,     -51,       -0]
+    [ 249,    y,       52,    15,     -26,       -7]
+    [ 302,    y,       51,    30,      -0,       -0]
+	}
+	
+	/*Empty*/
+	spriteset(spriteset_Barge1, "gfx/Barge1.png") { 
+    tmpl_Barge1(0) }
+	
+	/*Coal*/
+	spriteset(spriteset_Barge1CoalFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(38) }
+	
+	spritegroup spritegroup_Barge1Coal {
+    loaded: [spriteset_Barge1, spriteset_Barge1CoalFull];
+    loading: [spriteset_Barge1, spriteset_Barge1CoalFull];}
+
+	/*Ore*/
+	spriteset(spriteset_Barge1OreFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(76) }
+	
+	spritegroup spritegroup_Barge1Ore {
+    loaded: [spriteset_Barge1, spriteset_Barge1OreFull];
+    loading: [spriteset_Barge1, spriteset_Barge1OreFull];}
+	
+	/*Grain*/
+	spriteset(spriteset_Barge1GrainFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(114) }
+	
+	spritegroup spritegroup_Barge1Grain {
+    loaded: [spriteset_Barge1, spriteset_Barge1GrainFull];
+    loading: [spriteset_Barge1, spriteset_Barge1GrainFull];}
+	
+	/*Sugar*/
+	spriteset(spriteset_Barge1SugarFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(152) }
+	
+	spritegroup spritegroup_Barge1Sugar {
+    loaded: [spriteset_Barge1, spriteset_Barge1SugarFull];
+    loading: [spriteset_Barge1, spriteset_Barge1SugarFull];}
+	
+	/*Fruit*/
+	spriteset(spriteset_Barge1FruitFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(190) }
+	
+	spritegroup spritegroup_Barge1Fruit{
+    loaded: [spriteset_Barge1, spriteset_Barge1FruitFull];
+    loading: [spriteset_Barge1, spriteset_Barge1FruitFull];}
+	
+	/*Default*/
+	spriteset(spriteset_Barge1DefaultFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(228) }
+	
+	spritegroup spritegroup_Barge1Default{
+    loaded: [spriteset_Barge1, spriteset_Barge1DefaultFull];
+    loading: [spriteset_Barge1, spriteset_Barge1DefaultFull];}
+	
+	
+	item(FEAT_SHIPS, item_Barge1) {
+property{
+        name: string(STR_BT1_NAME);
+        introduction_date: date(1919, 06, 1);
+        model_life: 70;
+        vehicle_life: 30;
+        loading_speed: 10;
+        cost_factor: 120;
+        running_cost_factor: 110;
+        speed: 15 km/h;
+        cargo_capacity: 180;
+        climates_available: ALL_CLIMATES;
+        refit_cost: 10;		
+		is_refittable: 1;
+		refittable_cargo_classes: bitmask(CC_BULK);
+        sprite_id: SPRITE_ID_NEW_SHIP;
+		sound_effect: SOUND_DEPARTURE_CARGO_SHIP;
+		}
+	    graphics {
+		COAL: spritegroup_Barge1Coal;
+		GRAI: spritegroup_Barge1Grain;
+		IORE: spritegroup_Barge1Ore;
+		CORE: spritegroup_Barge1Ore;
+		WHEA: spritegroup_Barge1Grain;
+		MAIZ: spritegroup_Barge1Grain; 
+		SUGR: spritegroup_Barge1Sugar;
+		FRUT: spritegroup_Barge1Fruit;
+        default: spritegroup_Barge1Default;
+		}
+	}
+	
+	/*Barge2*/
+	
+	template tmpl_Barge2(y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      y,        19,    53,      -9,      -26]
+    [ 20,     y,       72,    42,     -72,       -0]
+    [ 93,     y,       74,    19,     -46,       -9]
+    [ 168,     y,       73,    42,      -0,       -0]
+    [ 242,    y,        19,    52,      -9,      -26]
+    [ 262,    y,       73,    42,     -73,       -0]
+    [ 336,    y,       74,    19,     -37,       -9]
+    [ 411,    y,       72,    42,      -0,       -0]
+	}
+	
+	/*Empty*/
+	spriteset(spriteset_Barge2, "gfx/Barge2.png") { 
+    tmpl_Barge2(0) }
+	
+	/*Coal*/
+	spriteset(spriteset_Barge2CoalFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(54) }
+	
+	spritegroup spritegroup_Barge2Coal {
+    loaded: [spriteset_Barge2, spriteset_Barge2CoalFull];
+    loading: [spriteset_Barge2, spriteset_Barge2CoalFull];}
+
+	/*Ore*/
+	spriteset(spriteset_Barge2OreFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(108) }
+	
+	spritegroup spritegroup_Barge2Ore {
+    loaded: [spriteset_Barge2, spriteset_Barge2OreFull];
+    loading: [spriteset_Barge2, spriteset_Barge2OreFull];}
+	
+	/*Grain*/
+	spriteset(spriteset_Barge2GrainFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(162) }
+	
+	spritegroup spritegroup_Barge2Grain {
+    loaded: [spriteset_Barge2, spriteset_Barge2GrainFull];
+    loading: [spriteset_Barge2, spriteset_Barge2GrainFull];}
+	
+	/*Sugar*/
+	spriteset(spriteset_Barge2SugarFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(216) }
+	
+	spritegroup spritegroup_Barge2Sugar {
+    loaded: [spriteset_Barge2, spriteset_Barge2SugarFull];
+    loading: [spriteset_Barge2, spriteset_Barge2SugarFull];}
+	
+	/*Fruit*/
+	spriteset(spriteset_Barge2FruitFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(270) }
+	
+	spritegroup spritegroup_Barge2Fruit{
+    loaded: [spriteset_Barge2, spriteset_Barge2FruitFull];
+    loading: [spriteset_Barge2, spriteset_Barge2FruitFull];}
+	
+	/*Default*/
+	spriteset(spriteset_Barge2DefaultFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(324) }
+	
+	spritegroup spritegroup_Barge2Default{
+    loaded: [spriteset_Barge2, spriteset_Barge2DefaultFull];
+    loading: [spriteset_Barge2, spriteset_Barge2DefaultFull];}
+	
+	
+	item(FEAT_SHIPS, item_Barge2) {
+property{
+        name: string(STR_BT1_NAME);
+        introduction_date: date(1952, 06, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        vehicle_life: 30;
+        loading_speed: 10;
+        cost_factor: 17;
+        running_cost_factor: 17;
+        speed: 30 km/h;
+        cargo_capacity: 360;
+        climates_available: ALL_CLIMATES;
+        refit_cost: 10;		
+		is_refittable: 1;
+		refittable_cargo_classes: bitmask(CC_BULK);
+        sprite_id: SPRITE_ID_NEW_SHIP;
+		sound_effect: SOUND_DEPARTURE_CARGO_SHIP;
+		}
+	    graphics {
+		COAL: spritegroup_Barge2Coal;
+		GRAI: spritegroup_Barge2Grain;
+		IORE: spritegroup_Barge2Ore;
+		CORE: spritegroup_Barge2Ore;
+		WHEA: spritegroup_Barge2Grain;
+		MAIZ: spritegroup_Barge2Grain; 
+		SUGR: spritegroup_Barge2Sugar;
+		FRUT: spritegroup_Barge2Fruit;
+        default: spritegroup_Barge2Default;
+		}
+	}

@@ -1,0 +1,118 @@
+grf {
+    grfid: "KS\02\25"; 
+	name: string(STR_GRF_NAME);	
+	desc: string(STR_GRF_DESC);
+	version: 0;
+	min_compatible_version: 0;
+	}
+	
+	/* Dolphin*/
+	
+spriteset(spriteset_dolphin, "gfx/Dolphin.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        24,    32,      -12,      -13]
+    [ 25,     0,       42,    28,     -42,       -0]
+    [ 68,     0,       44,    24,     -23,       -11]
+    [ 113,     0,       40,    33,      -0,       -0]
+    [ 154,    0,        24,    31,      -12,      -13]
+    [ 179,    0,       40,    33,     -42,       -0]
+    [ 220,    0,       44,    24,     -23,       -11]
+    [ 265,    0,       42,    28,      -0,       -0]
+	}
+item(FEAT_SHIPS, item_Dolphin) {
+property{
+        name: string(STR_PHC1_NAME);
+        introduction_date: date(1992, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        vehicle_life: 25;
+        loading_speed: 10;
+        cost_factor: 190;
+        running_cost_factor: 200;
+        speed: 127 km/h;
+        cargo_capacity: 110;
+        climates_available: ALL_CLIMATES;
+        default_cargo_type: CC_PASSENGERS;
+        sprite_id: SPRITE_ID_NEW_SHIP;
+		sound_effect: SOUND_DEPARTURE_FERRY;
+		}
+	    graphics {
+        default: spriteset_dolphin;
+		}
+	}
+	
+	/* Orca*/
+	
+spriteset(spriteset_orca, "gfx/Orca.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        24,    36,      -12,      -16]
+    [ 25,     0,       50,    34,     -50,       -0]
+    [ 76,     0,       56,    24,     -29,       -11]
+    [ 133,     0,       50,    37,      -0,       -0]
+    [ 184,    0,        23,    36,      -12,      -17]
+    [ 209,    0,       50,    37,     -50,       -0]
+    [ 260,    0,       56,    24,     -30,       -11]
+    [ 317,    0,       50,    34,      -0,       -0]
+	}
+item(FEAT_SHIPS, item_Orca) {
+property{
+        name: string(STR_PHC2_NAME);
+        introduction_date: date(2001, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        vehicle_life: 25;
+        loading_speed: 10;
+        cost_factor: 210;
+        running_cost_factor: 210;
+        speed: 112 km/h;
+        cargo_capacity: 150;
+        climates_available: ALL_CLIMATES;
+        default_cargo_type: CC_PASSENGERS;
+        sprite_id: SPRITE_ID_NEW_SHIP;
+		sound_effect: SOUND_DEPARTURE_FERRY;
+		}
+	    graphics {
+        default: spriteset_orca;
+		}
+	}
+	
+		/* Narwhal*/
+	
+spriteset(spriteset_narwhal, "gfx/Narwhal.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        29,    39,      -14,      -16]
+    [ 30,     0,       51,    40,     -51,       -0]
+    [ 82,     0,       56,    32,     -28,       -14]
+    [ 139,     0,       52,    45,      -0,       -0]
+    [ 192,    0,        29,    40,      -15,      -17]
+    [ 222,    0,       52,    45,     -51,       -0]
+    [ 275,    0,       56,    32,     -29,       -14]
+    [ 332,    0,       51,    40,      -0,       -0]
+	}
+	
+	
+	
+item(FEAT_SHIPS, item_Narwhal) {
+property{
+        name: string(STR_CHC1_NAME);
+        introduction_date: date(1999, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        vehicle_life: 25;
+        loading_speed: 10;
+        cost_factor: 215;
+        running_cost_factor: 215;
+        speed: 88 km/h;
+        cargo_capacity: 120;
+        climates_available: ALL_CLIMATES;
+        default_cargo_type: CC_EXPRESS;
+        sprite_id: SPRITE_ID_NEW_SHIP;
+		sound_effect: SOUND_DEPARTURE_CARGO_SHIP;
+		is_refittable: 1;
+		refit_cost: 10;		
+		//refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE, CC_NEO_BULK);
+		refittable_cargo_classes: ALL_NORMAL_CARGO_CLASSES;
+		non_refittable_cargo_classes: bitmask(CC_PASSENGERS,CC_LIQUID);
+		}
+	    graphics {
+        default: spriteset_narwhal;
+		}
+	}
+	

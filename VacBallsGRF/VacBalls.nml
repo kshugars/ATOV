@@ -1,0 +1,438 @@
+grf {
+    grfid: "KS\04\25"; 
+	name: string(STR_GRF_NAME);	
+	desc: string(STR_GRF_DESC);
+	version: 0;
+	min_compatible_version: 0;
+	param 0 {
+	param_include_balls {
+		name: string(STR_PARAM_NAME_include_balls);
+         desc: string(STR_PARAM_DESC_include_balls);
+         type: bool;
+         bit:  1;     
+	  }
+	  }
+	param 2 {
+	param_color {
+		type: int;
+		name: string(STR_PARAM_NAME_color);
+		desc: string(STR_PARAM_DESC_color);
+		min_value: 0;
+		max_value: 2;
+		def_value: 0;
+		names: {
+			0: string(STR_PARAM_VALUE_color_gold);
+			1: string(STR_PARAM_VALUE_color_white);
+			2: string(STR_PARAM_VALUE_color_cc);
+			};
+		}
+		}	
+	}
+	
+	cargotable{
+    PASS, FOOD, GOOD, VALU
+}
+
+ tramtypetable {
+ 	"VACB"
+
+ }
+ 
+
+
+	/*-------------BALLS--------------*/
+
+
+template tmpl_Spheres(y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      y,        7,    7,      -(3+1),      -(3)]
+    [ 8,     y,       7,    7,     -(3+5),       -3]
+    [ 16,     y,       7,    7,     -(3+2),       -(3+3)]
+    [ 24,     y,       7,    7,      -(3-5),       -(3+1)]
+    [ 32,    y,        7,    7,      -(3+1),      -(3+3)]
+    [ 40,    y,       7,    7,     -(3+6),       -(3+1)]
+    [ 48,    y,       7,    7,     -(3),       -(3+1)]
+    [ 56,    y,       7,    7,      -(3-5),       -(3-1)]
+	}
+	
+	/*-Pass-*/
+	spriteset(spriteset_SpheresPass, "gfx/Spheres2.png") { 
+    tmpl_Spheres(0) }
+	
+item(FEAT_ROADVEHS, item_PassBall) {
+property{
+        name: string(STR_vb1_NAME);
+        introduction_date: date(2010, 10, 25);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        vehicle_life: 30;
+        loading_speed: 10;
+        cost_factor: 160;
+        running_cost_factor: 30;
+        speed: 511 km/h;
+		power: 1100 hp;
+        weight: 5 ton;
+        cargo_capacity: 12;
+		climates_available: param_include_balls ? NO_CLIMATE : ALL_CLIMATES ;	
+        sprite_id: SPRITE_ID_NEW_ROADVEH;
+		default_cargo_type: PASS;
+		sound_effect: 	SOUND_DEPARTURE_MAGLEV;
+		 misc_flags: bitmask(ROADVEH_FLAG_TRAM);
+		 tram_type: VACB;
+		}
+	    graphics {
+        default: spriteset_SpheresPass;
+		}
+	}
+	
+		/*-ARMOURED-*/
+	spriteset(spriteset_SpheresARMOURED, "gfx/Spheres2.png") { 
+    tmpl_Spheres(8) }
+	
+item(FEAT_ROADVEHS, item_ARMOUREDBall) {
+property{
+        name: string(STR_vb2_NAME);
+        introduction_date: date(2011, 10, 25);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        vehicle_life: 30;
+        loading_speed: 10;
+        cost_factor: 160;
+        running_cost_factor: 30;
+        speed: 511 km/h;
+		power: 1100 hp;
+        weight: 5 ton;
+        cargo_capacity: 12;
+        climates_available: param_include_balls ? NO_CLIMATE : ALL_CLIMATES ;	
+        refit_cost: 0;		
+        sprite_id: SPRITE_ID_NEW_ROADVEH;
+		default_cargo_type: VALU;
+		refittable_cargo_classes: bitmask(CC_ARMOURED);
+		sound_effect: 	SOUND_DEPARTURE_MAGLEV;
+		 misc_flags: bitmask(ROADVEH_FLAG_TRAM);
+		 tram_type: VACB;
+		}
+	    graphics {
+        default: spriteset_SpheresARMOURED;
+		}
+	}
+	
+	/*GOOD*/
+	spriteset(spriteset_SpheresGood, "gfx/Spheres2.png") { 
+    tmpl_Spheres(16) }
+	
+item(FEAT_ROADVEHS, item_GOODBall) {
+property{
+        name: string(STR_vb3_NAME);
+        introduction_date: date(2012, 10, 25);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        vehicle_life: 30;
+        loading_speed: 10;
+        cost_factor: 160;
+        running_cost_factor: 30;
+        speed: 511 km/h;
+		power: 1100 hp;
+        weight: 5 ton;
+        cargo_capacity: 12;
+        climates_available: param_include_balls ? NO_CLIMATE : ALL_CLIMATES ;		
+        sprite_id: SPRITE_ID_NEW_ROADVEH;
+		default_cargo_type: GOOD;
+		sound_effect: 	SOUND_DEPARTURE_MAGLEV;
+		 misc_flags: bitmask(ROADVEH_FLAG_TRAM);
+		 tram_type: VACB;
+		}
+	    graphics {
+        default: spriteset_SpheresGood;
+		}
+	}
+	
+	/*-FOOD-*/
+	spriteset(spriteset_SpheresFood, "gfx/Spheres2.png") { 
+    tmpl_Spheres(24) }
+	
+item(FEAT_ROADVEHS, item_FOODBall) {
+property{
+        name: string(STR_vb4_NAME);
+        introduction_date: date(2013, 10, 25);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        vehicle_life: 30;
+        loading_speed: 10;
+        cost_factor: 160;
+        running_cost_factor: 30;
+        speed: 511 km/h;
+		power: 1100 hp;
+        weight: 5 ton;
+        cargo_capacity: 12;
+        climates_available: param_include_balls ? NO_CLIMATE : ALL_CLIMATES ;	
+        sprite_id: SPRITE_ID_NEW_ROADVEH;
+		default_cargo_type: FOOD;
+		sound_effect: 	SOUND_DEPARTURE_MAGLEV;
+		 misc_flags: bitmask(ROADVEH_FLAG_TRAM);
+		 tram_type: VACB;
+		}
+	    graphics {
+        default: spriteset_SpheresFood;
+		}
+	}
+	
+	/*-Pass2-*/
+	spriteset(spriteset_SpheresPass2, "gfx/Spheres2.png") { 
+    tmpl_Spheres(32) }
+	
+item(FEAT_ROADVEHS, item_PassBall2) {
+property{
+        name: string(STR_vb5_NAME);
+        introduction_date: date(2030, 10, 25);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        vehicle_life: 30;
+        loading_speed: 10;
+        cost_factor: 170;
+        running_cost_factor: 32;
+        speed: 511 km/h;
+		power: 1700 hp;
+        weight: 5 ton;
+        cargo_capacity: 12;
+        climates_available: param_include_balls ? NO_CLIMATE : ALL_CLIMATES ;			
+        sprite_id: SPRITE_ID_NEW_ROADVEH;
+		default_cargo_type: PASS;
+		sound_effect: 	SOUND_DEPARTURE_MAGLEV;
+		 misc_flags: bitmask(ROADVEH_FLAG_TRAM);
+		 tram_type: VACB;
+		}
+	    graphics {
+        default: spriteset_SpheresPass2;
+		}
+	}
+	
+		/*-ARMOURED2-*/
+	spriteset(spriteset_SpheresARMOURED2, "gfx/Spheres2.png") { 
+    tmpl_Spheres(40) }
+	
+item(FEAT_ROADVEHS, item_ARMOUREDBall2) {
+property{
+        name: string(STR_vb6_NAME);
+        introduction_date: date(2031, 10, 25);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        vehicle_life: 30;
+        loading_speed: 10;
+        cost_factor: 170;
+        running_cost_factor: 32;
+        speed: 511 km/h;
+		power: 1700 hp;
+        weight: 5 ton;
+        cargo_capacity: 12;
+        climates_available: param_include_balls ? NO_CLIMATE : ALL_CLIMATES ;	
+        refit_cost: 0;		
+        sprite_id: SPRITE_ID_NEW_ROADVEH;
+		default_cargo_type: VALU;
+		refittable_cargo_classes: bitmask(CC_ARMOURED);
+		sound_effect: 	SOUND_DEPARTURE_MAGLEV;
+		 misc_flags: bitmask(ROADVEH_FLAG_TRAM);
+		 tram_type: VACB;
+		}
+	    graphics {
+        default: spriteset_SpheresARMOURED2;
+		}
+	}
+	
+	/*GOOD2*/
+	spriteset(spriteset_SpheresGood2, "gfx/Spheres2.png") { 
+    tmpl_Spheres(48) }
+	
+item(FEAT_ROADVEHS, item_GOODBall2) {
+property{
+        name: string(STR_vb7_NAME);
+        introduction_date: date(2032, 10, 25);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        vehicle_life: 30;
+        loading_speed: 10;
+        cost_factor: 170;
+        running_cost_factor: 32;
+        speed: 511 km/h;
+		power: 1700 hp;
+        weight: 5 ton;
+        cargo_capacity: 12;
+        climates_available: param_include_balls ? NO_CLIMATE : ALL_CLIMATES ;	
+        sprite_id: SPRITE_ID_NEW_ROADVEH;
+		default_cargo_type: GOOD;
+		sound_effect: 	SOUND_DEPARTURE_MAGLEV;
+		 misc_flags: bitmask(ROADVEH_FLAG_TRAM);
+		 tram_type: VACB;
+		}
+	    graphics {
+        default: spriteset_SpheresGood2;
+		}
+	}
+	
+	/*-FOOD2-*/
+	spriteset(spriteset_SpheresFood2, "gfx/Spheres2.png") { 
+    tmpl_Spheres(56) }
+	
+item(FEAT_ROADVEHS, item_FOODBall2) {
+property{
+        name: string(STR_vb8_NAME);
+        introduction_date: date(2033, 10, 25);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        vehicle_life: 30;
+        loading_speed: 10;
+        cost_factor: 170;
+        running_cost_factor: 32;
+        speed: 511 km/h;
+		power: 1700 hp;
+        weight: 5 ton;
+        cargo_capacity: 12;
+        climates_available: param_include_balls ? NO_CLIMATE : ALL_CLIMATES ;	
+        sprite_id: SPRITE_ID_NEW_ROADVEH;
+		default_cargo_type: FOOD;
+		sound_effect: 	SOUND_DEPARTURE_MAGLEV;
+		 misc_flags: bitmask(ROADVEH_FLAG_TRAM);
+		 tram_type: VACB;
+		}
+	    graphics {
+        default: spriteset_SpheresFood2;
+		}
+	}
+	
+	/*----------------Track--------------*/
+	
+	/*Depot*/
+	spriteset(spriteset_Depot, "gfx/Depot.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,       22,    28,      -(6-3),      -(6-9)]
+    [ 30,     0,      60,    47,     -(17-16),       -31]
+    [ 110,     0,       22,    27,     -(6+12),       -(6-9)]
+    [ 142,     0,       60,    47,      -(45+13),       -(31)]
+    [ 222,    0,        60,    47,      -(45+13),      -31]
+    [ 302,    0,       60,    47,     -(17-16),       -31]
+	}
+	
+	/*over under*/
+	
+	template tmpl_overunder() {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        64,    31,      -32,      -0]
+	[ 80,      0,        64,    31,      -32,      -0]
+	[ 160,      0,        64,    31,      -32,      -0]
+	[ 240,      0,        64,    31,      -32,      -0]
+	[ 320,      0,        64,    31,      -32,      -0]
+	[ 400,      0,        64,    31,      -32,      -0]
+	[ 480,      0,        64,    31,      -32,      -0]
+	
+	[ 0,      40,        64,    31,      -32,      -0]
+	[ 80,      40,        64,    31,      -32,      -0]
+	[ 160,      40,        64,    31,      -32,      -0]
+	[ 240,      40,        64,    31,      -32,      -0]
+	
+	[ 320,      40,        64,    39,      -32,      -0]
+	[ 400,      40,        64,    21,      -32,      -0]
+	[ 480,      40,        64,    21,      -32,      -0]
+	[ 560,      40,        64,    39,      -32,      -0]
+	
+	[ 0,      80,        64,    31,      -32,      -0]
+	[ 80,      80,        64,    31,      -32,      -0]
+	[ 160,      80,        64,    31,      -32,      -0]
+	[ 240,     80,        64,    31,      -32,      -0]
+	}
+	
+	/*Underlay*/
+	spriteset(spriteset_Underlay, "gfx/Underlay.png") { 
+    tmpl_overunder()  }
+	
+	/*Overlay*/
+	spriteset(spriteset_Overlay, "gfx/Overlay_Test.png") { 
+    tmpl_overunder()  }
+	
+	/*c back front*/
+	
+	template tmpl_cbackfront() {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //2 straight 5 connection
+	[0,      0,        64,    57,      -32,      -17]
+	[ 80,      0,        64,    57,      -32,      -17]
+	[ 160,      0,        64,    57,      -32,      -17]
+	[ 240,      0,        64,    57,      -32,      -17]
+	[ 320,      0,        64,    57,      -32,      -17]
+	[ 400,      0,        64,    57,      -32,      -17]
+	[ 480,      0,        64,    57,      -32,      -17]
+	//4 turns
+	[ 0,      80,        64,    57,      -32,      -17]
+	[ 80,      80,        64,    57,      -32,      -17]
+	[ 160,      80,        64,    57,      -32,      -17]
+	[ 240,      80,        64,    57,      -32,      -17]
+	//4 slopes
+	[ 320,      80,        64,    65,      -32,      -17]
+	[ 400,      80,        64,    65,      -32,      -17]
+	[ 480,      80,        64,    65,      -32,      -17]
+	[ 560,      80,        64,    65,      -32,      -17]
+	//4 ends
+	[ 0,      160,        64,    57,      -32,      -17]
+	[ 80,      160,        64,    57,      -32,      -17]
+	[ 160,      160,        64,    57,      -32,      -17]
+	[ 240,      160,        64,    57,      -32,      -17]
+	//4 tunnels
+	[ 320,      160,        64,    48,      -32,      -17]
+	[ 400,      160,        64,    48,      -32,      -17]
+	[ 480,      160,        64,    48,      -32,      -17]
+	[ 560,      160,        64,    48,      -32,      -17]
+	//2 on bridge
+	[ 0,      240,        64,    48,      -32,      -17]
+	[ 80,      240,        64,    48,      -32,      -17]
+	//4 bridge ends
+	[ 160,      240,        64,    57,      -32,      -17]
+	[ 240,      240,        64,    57,      -32,      -17]
+	[ 320,      240,        64,    57,      -32,      -17]
+	[ 400,      240,        64,    57,      -32,      -17]
+	}
+		
+	/*front*/
+	
+	spriteset(spriteset_cfrontGold, "gfx/catenary_frontGold.png") { 
+    tmpl_cbackfront() }
+	spriteset(spriteset_cfrontWhite, "gfx/catenary_frontWhite.png") { 
+    tmpl_cbackfront()}
+	spriteset(spriteset_cfrontCC, "gfx/catenary_frontCC.png") { 
+    tmpl_cbackfront()}
+	
+	switch(FEAT_TRAMTYPES, SELF, sw_color, param_color) {
+    0: spriteset_cfrontGold;
+    1: spriteset_cfrontWhite;
+	2: spriteset_cfrontCC;
+		}
+	
+	/*back*/
+	spriteset(spriteset_cback, "gfx/catenary_back.png") { 
+    tmpl_cbackfront()  }
+	
+	/*bridgeSurface*/
+	spriteset(spriteset_bridgeSurface, "gfx/bridgeSurface.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        64,    31,      -32,      -0]
+	[ 80,      0,        64,    31,      -32,      -0]
+	[ 160,      0,        64,    39,      -32,      -8]
+	[ 240,      0,        64,    23,      -32,      -0]
+	[ 320,      0,        64,    23,      -32,      -0]
+	[ 400,      0,        64,    39,      -32,      -8]
+	}
+	
+
+
+	item(FEAT_TRAMTYPES, vactram) {
+     property {
+         label:                      "VACB";
+         name:                       string(STR_VacTRAM);
+         menu_text:                  string(STR_VacTRAM);
+		 toolbar_caption: string(STR_TOOLBAR_CAPTION_VacTram);
+         powered_tramtype_list: ["TRAM"];                 
+         tramtype_flags:             bitmask(TRAMTYPE_FLAG_CATENARY, TRAMTYPE_FLAG_NO_LEVEL_CROSSING, TRAMTYPE_FLAG_NO_HOUSES);          
+         construction_cost:          70;                                       
+         speed_limit:                511 km/h;
+		 maintenance_cost:           70;
+     }
+     graphics {
+         underlay:        spriteset_Underlay;    // defines the tramtrack underlay
+         track_overlay:         spriteset_Overlay;      // defines the tramtrack overlay
+         //tunnels:         tunnel_switch;             // defines the track drawn on a tunnel tile
+         depots:          spriteset_Depot;              // defines the depot sprites
+         bridge_surfaces: spriteset_bridgeSurface;     // defines the overlay drawn over bridges depending on climate
+		 catenary_front: sw_color;
+		 catenary_back: spriteset_cback;
+     }
+ }

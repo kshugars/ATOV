@@ -1,0 +1,11 @@
+##grflangid 0x0
+STR_GRF_NAME	:{TITLE} - {VERSION}
+STR_GRF_DESC	:ATOV - Add to original vehicles. Adds additional passenger and new cargo helicopters. Designed to be used with original vehicle set.
+STR_GRF_URL		:
+
+# vehicle names
+STR_CH1_NAME  :SKLabs Cargo Copter
+STR_CH2_NAME  :SKLabs Cargo Copter MK2
+STR_CH3_NAME  :SKLabs Sky Hauler
+STR_PH1_NAME  :SKLabs Falcon
+STR_PH2_NAME  :SKLabs Pelican

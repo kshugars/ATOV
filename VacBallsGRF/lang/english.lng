@@ -1,0 +1,27 @@
+##grflangid 0x0
+STR_GRF_NAME	:{TITLE} - {VERSION}
+STR_GRF_DESC	:ATOV - Add to original vehicles. Adds vacuum tram tubes and futuristic VacBall vehicles. Designed to be used with original vehicle set.
+STR_GRF_URL		:
+
+# vehicle names
+STR_vb1_NAME  :SKLabs Passenger VacBall
+STR_vb2_NAME  :SKLabs Armoured VacBall
+STR_vb3_NAME  :SKLabs Goods VacBall
+STR_vb4_NAME  :SKLabs Food VacBall
+STR_vb5_NAME  :SKLabs Passenger VacBall MK2
+STR_vb6_NAME  :SKLabs Armoured VacBall MK2
+STR_vb7_NAME  :SKLabs Goods VacBall MK2
+STR_vb8_NAME  :SKLabs Food VacBall MK2
+STR_VacTRAM   :VacTram
+STR_TOOLBAR_CAPTION_VacTram:VacTram
+
+STR_PARAM_NAME_color: VacTube Top Color
+STR_PARAM_DESC_color:Set the color of the top rail of the VacTubes
+STR_PARAM_VALUE_color_gold:Gold
+STR_PARAM_VALUE_color_white:White
+STR_PARAM_VALUE_color_cc:Company Color
+
+STR_PARAM_NAME_include_balls: Track Only
+STR_PARAM_DESC_include_balls: Disables VacBalls. Note: without something to replace them, tubes will alo be disabled.
+
+

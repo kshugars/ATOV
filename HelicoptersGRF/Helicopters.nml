@@ -1,0 +1,321 @@
+grf {
+    grfid: "KS\01\25"; 
+	name: string(STR_GRF_NAME);	
+	desc: string(STR_GRF_DESC);
+	version: 0;
+	min_compatible_version: 0;
+	}
+	
+		/* Rotors*/
+	spriteset(spriteset_srotor, "gfx/sRotor.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        22,    10,      -10,      -5]
+    [ 23,     0,       30,    14,     -15,       -7]
+    [ 54,     0,       30,    14,     -15,       -7]
+    [ 85,     0,       30,    14,      -15,       -7]
+	}
+		spriteset(spriteset_lrotor, "gfx/lRotor.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        25,    13,      -12,      -6]
+    [ 27,     0,       32,    18,     -16,       -9]
+    [ 60,     0,       32,    18,     -16,       -9]
+    [ 93,     0,       32,    18,      -16,       -9]
+	}
+	
+	spriteset(spriteset_drotorN, "gfx/dRotorN.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        26,    22,      -14,      -5]
+    [ 27,     0,       32,    27,     -17,       -7]
+    [ 60,     0,       32,    27,     -17,       -6]
+    [ 93,     0,       31,    18,      -17,       -7]
+	}
+	
+	spriteset(spriteset_drotorNE, "gfx/dRotorNE.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        42,    19,      -32,      -5]
+    [ 43,     0,       49,    19,     -34,       -7]
+    [ 93,     0,       51,    24,     -36,       -7]
+    [ 145,     0,       52,    23,      -38,       -7]
+	}
+	
+	spriteset(spriteset_drotorE, "gfx/dRotorE.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        51,    15,      -41,      -10]
+    [ 52,     0,       58,    19,     -44,       -12]
+    [ 111,     0,       51,    19,     -43,       -12]
+    [ 169,     0,       56,    19,      -42,       -12]
+	}
+	
+	spriteset(spriteset_drotorSE, "gfx/dRotorSE.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        42,    20,      -32,      -15]
+    [ 43,     0,       50,    24,     -36,       -17]
+    [ 94,     0,       48,    24,     -34,       -17]
+    [ 143,     0,       50,    24,      -36,       -17]
+	}
+	
+	spriteset(spriteset_drotorS, "gfx/dRotorS.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        26,    27,      -14,      -22]
+    [ 27,     0,       32,    31,     -17,       -24]
+    [ 60,     0,       32,    30,     -17,       -23]
+    [ 93,     0,       32,    31,      -18,       -24]
+	}
+	
+	spriteset(spriteset_drotorSW, "gfx/dRotorSW.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        42,    20,      -13,      -16]
+    [ 43,     0,       50,    24,     -15,       -17]
+    [ 94,     0,       48,    24,     -16,       -17]
+    [ 143,     0,       50,    24,      -16,       -17]
+	}
+	
+	spriteset(spriteset_drotorW, "gfx/dRotorW.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        51,    15,      -12,      -10]
+    [ 52,     0,       58,    19,     -16,       -12]
+    [ 111,     0,       51,    19,     -16,       -12]
+    [ 169,     0,       56,    19,      -16,       -12]
+	}
+	
+	spriteset(spriteset_drotorNW, "gfx/dRotorNW.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        42,    19,      -12,      -6]
+    [ 43,     0,       49,    19,     -17,       -7]
+    [ 93,     0,       51,    24,     -17,       -7]
+    [ 145,     0,       52,    23,      -16,       -7]
+	}
+	
+	switch (FEAT_AIRCRAFT, SELF, sw_drotor, (direction)) {
+	DIRECTION_WEST: spriteset_drotorW;
+	DIRECTION_NORTH: spriteset_drotorN;
+	DIRECTION_NORTHEAST: spriteset_drotorNE;
+	DIRECTION_EAST: spriteset_drotorE;
+	DIRECTION_SOUTHEAST: spriteset_drotorSE;
+	DIRECTION_SOUTH: spriteset_drotorS;
+	DIRECTION_SOUTHWEST: spriteset_drotorSW;	
+	DIRECTION_NORTHWEST: spriteset_drotorNW;
+	spriteset_drotorW;
+	}
+
+	
+	/* Falcon*/
+	
+spriteset(spriteset_falcon, "gfx/Falcon.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        19,    16,      -10,      -7]
+    [ 20,     0,       24,    14,     -15,       -5]
+    [ 45,     0,       33,    12,     -22,       -5]
+    [ 79,     0,       28,    18,      -18,       -11]
+    [ 108,    0,        18,    22,      -10,      -12]
+    [ 127,    0,       26,    19,     -10,       -11]
+    [ 154,    0,       33,    13,     -12,       -6]
+    [ 188,    0,       28,    14,      -10,       -5]
+	}
+	
+	item(FEAT_AIRCRAFT, item_Falcon) {
+    property {
+        name: string(STR_PH1_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(2015,01,01);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        vehicle_life: 20;
+        loading_speed: 20;
+        cost_factor: 15;
+        running_cost_factor: 95;
+        sprite_id: SPRITE_ID_NEW_AIRCRAFT;
+        speed: 750 km/h;
+        aircraft_type: AIRCRAFT_TYPE_HELICOPTER;
+        acceleration: 18;
+        passenger_capacity: 55;
+        mail_capacity: 20;
+        sound_effect: SOUND_TAKEOFF_HELICOPTER;
+    }
+
+    graphics {
+        default: spriteset_falcon;
+        rotor: spriteset_srotor;
+    }
+	}
+	
+		/* Pelican*/
+	spriteset(spriteset_Pelican, "gfx/Pelican.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        10,    19,      -5,      -8]
+    [ 10,     0,       29,    17,     -17,       -6]
+    [ 41,     0,       39,    16,     -24,       -6]
+    [ 81,     0,       27,    25,      -15,       -11]
+    [ 109,    0,        10,    27,      -5,      -17]
+    [ 120,    0,       27,    25,     -14,       -11]
+    [ 148,    0,       38,    16,     -17,       -5]
+    [ 187,    0,       28,    16,      -12,       -5]
+	}
+	
+	item(FEAT_AIRCRAFT, item_Pelican) {
+    property {
+        name: string(STR_PH2_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(2017,03,01);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        vehicle_life: 20;
+        loading_speed: 20;
+        cost_factor: 20;
+        running_cost_factor: 110;
+        sprite_id: SPRITE_ID_NEW_AIRCRAFT;
+        speed: 525 km/h;
+        aircraft_type: AIRCRAFT_TYPE_HELICOPTER;
+        acceleration: 18;
+        passenger_capacity: 100;
+        mail_capacity: 40;
+        sound_effect: SOUND_TAKEOFF_HELICOPTER;
+    }
+
+    graphics {
+        default: spriteset_Pelican;
+        rotor: spriteset_srotor;
+		}
+	}
+	
+		/* SkyHauler*/
+	spriteset(spriteset_SkyHauler_Empty, "gfx/SkyHauler.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        8,    18,      -4,      -6]
+    [ 9,     0,       29,    13,     -19,       -3]
+    [ 39,     0,       40,    13,     -28,       -4]
+    [ 80,     0,       29,    23,      -19,       -13]
+    [ 110,    0,        8,    26,      -4,      -19]
+    [ 119,    0,       29,    23,     -11,       -13]
+    [ 149,    0,       40,    13,     -14,       -4]
+    [ 190,    0,       29,    13,      -11,       -4]
+	}
+	spriteset(spriteset_SkyHauler_Full, "gfx/SkyHauler.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      27,        8,    18,      -4,      -6]
+    [ 9,     27,       29,    13,     -19,       -3]
+    [ 39,     27,       40,    13,     -28,       -4]
+    [ 80,     27,       29,    23,      -19,       -13]
+    [ 110,    27,        8,    26,      -4,      -19]
+    [ 119,    27,       29,    23,     -11,       -13]
+    [ 149,    27,       40,    13,     -14,       -4]
+    [ 190,    27,       29,    13,      -11,       -4]
+	}
+	
+	spritegroup spriteset_SkyHauler {
+    loaded:  [spriteset_SkyHauler_Empty, spriteset_SkyHauler_Full];
+    loading: [spriteset_SkyHauler_Empty, spriteset_SkyHauler_Full];
+}
+
+	item(FEAT_AIRCRAFT, item_SkyHauler) {
+    property {
+        name: string(STR_CH3_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(2016,05,01);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        vehicle_life: 20;
+        loading_speed: 20;
+        cost_factor: 22;
+        running_cost_factor: 210;
+        sprite_id: SPRITE_ID_NEW_AIRCRAFT;
+        speed: 475 km/h;
+        aircraft_type: AIRCRAFT_TYPE_HELICOPTER;
+        acceleration: 18;
+        passenger_capacity: 325;
+        mail_capacity: 80;
+		refit_cost: 10;		
+		//refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE, CC_NEO_BULK);
+		refittable_cargo_classes: ALL_NORMAL_CARGO_CLASSES;
+		non_refittable_cargo_classes: bitmask(CC_PASSENGERS,CC_LIQUID);
+        sound_effect: SOUND_TAKEOFF_HELICOPTER;
+    }
+
+    graphics {
+        default: spriteset_SkyHauler;
+        rotor: spriteset_lrotor;
+		}
+	}
+	
+			/* CargoCopter1*/
+	spriteset(spriteset_CargoCopter1, "gfx/CargoCopter1.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        10,    18,      -5,      -5]
+    [ 11,     0,       28,    15,     -22,       -3]
+    [ 40,     0,       38,    16,     -28,       -5]
+    [ 79,     0,       28,    20,      -21,       -10]
+    [ 108,    0,        13,    27,      -6,      -16]
+    [ 122,    0,       28,    20,     -9,       -10]
+    [ 151,    0,       38,    16,     -12,       -5]
+    [ 190,    0,       28,    15,      -10,       -2]
+	}
+
+
+	item(FEAT_AIRCRAFT, item_CargoCopter1) {
+    property {
+        name: string(STR_CH1_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1972,02,01);
+        model_life: 30;
+        vehicle_life: 20;
+        loading_speed: 20;
+        cost_factor: 16;
+        running_cost_factor: 190;
+        sprite_id: SPRITE_ID_NEW_AIRCRAFT;
+        speed: 350 km/h;
+        aircraft_type: AIRCRAFT_TYPE_HELICOPTER;
+        acceleration: 18;
+        passenger_capacity: 250;
+        mail_capacity: 40;
+		refit_cost: 10;		
+		//refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE, CC_NEO_BULK);
+		refittable_cargo_classes: ALL_NORMAL_CARGO_CLASSES;
+		non_refittable_cargo_classes: bitmask(CC_PASSENGERS,CC_LIQUID);
+        sound_effect: SOUND_TAKEOFF_HELICOPTER;
+    }
+
+    graphics {
+        default: spriteset_CargoCopter1;
+        rotor: sw_drotor;
+		}
+	}
+	
+				/* CargoCopter2*/
+	spriteset(spriteset_CargoCopter2, "gfx/CargoCopter2.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        10,    18,      -5,      -5]
+    [ 11,     0,       28,    15,     -22,       -3]
+    [ 40,     0,       38,    16,     -28,       -5]
+    [ 79,     0,       28,    20,      -21,       -10]
+    [ 108,    0,        13,    27,      -6,      -16]
+    [ 122,    0,       28,    20,     -9,       -10]
+    [ 151,    0,       38,    16,     -12,       -5]
+    [ 190,    0,       28,    15,      -10,       -2]
+	}
+
+
+	item(FEAT_AIRCRAFT, item_CargoCopter2) {
+    property {
+        name: string(STR_CH2_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1991,06,01);
+        model_life: 30;
+        vehicle_life: 20;
+        loading_speed: 20;
+        cost_factor: 16;
+        running_cost_factor: 190;
+        sprite_id: SPRITE_ID_NEW_AIRCRAFT;
+        speed: 425 km/h;
+        aircraft_type: AIRCRAFT_TYPE_HELICOPTER;
+        acceleration: 18;
+        passenger_capacity: 300;
+        mail_capacity: 45;
+		refit_cost: 10;		
+		//refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE, CC_NEO_BULK);
+		refittable_cargo_classes: ALL_NORMAL_CARGO_CLASSES;
+		non_refittable_cargo_classes: bitmask(CC_PASSENGERS,CC_LIQUID);
+        sound_effect: SOUND_TAKEOFF_HELICOPTER;
+    }
+
+    graphics {
+        default: spriteset_CargoCopter2;
+        rotor: sw_drotor;
+		}
+	}
