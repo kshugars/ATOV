@@ -1,7 +1,7 @@
 ##grflangid 0x0
 STR_GRF_NAME	:{TITLE} - {VERSION}
 STR_GRF_DESC	:ATOV - Add to original vehicles. Adds vacuum tram tubes and futuristic VacBall vehicles. Designed to be used with original vehicle set.
-STR_GRF_URL		:
+STR_GRF_URL		:https://github.com/kshugars/ATOV
 
 # vehicle names
 STR_vb1_NAME  :SKLabs Passenger VacBall

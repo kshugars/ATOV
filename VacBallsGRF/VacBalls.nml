@@ -294,7 +294,7 @@ property{
 	/*----------------Track--------------*/
 	
 	/*Depot*/
-	spriteset(spriteset_Depot, "gfx/Depot.png") {
+	template tmpl_depot() {
     //left_x, upper_y, width, height, offset_x, offset_y
     [ 0,      0,       22,    28,      -(6-3),      -(6-9)]
     [ 30,     0,      60,    47,     -(17-16),       -31]
@@ -304,6 +304,18 @@ property{
     [ 302,    0,       60,    47,     -(17-16),       -31]
 	}
 	
+	spriteset(spriteset_depotGold, "gfx/Depot_Gold.png") { 
+    tmpl_depot() }
+	spriteset(spriteset_depotWhite, "gfx/Depot_White.png") { 
+    tmpl_depot()}
+	spriteset(spriteset_depotCC, "gfx/Depot_CC.png") { 
+    tmpl_depot()}
+	
+	switch(FEAT_TRAMTYPES, SELF, sw_depot, param_color) {
+    0: spriteset_depotGold;
+    1: spriteset_depotWhite;
+	2: spriteset_depotCC;
+		}
 	/*over under*/
 	
 	template tmpl_overunder() {
@@ -430,7 +442,7 @@ property{
          underlay:        spriteset_Underlay;    // defines the tramtrack underlay
          track_overlay:         spriteset_Overlay;      // defines the tramtrack overlay
          //tunnels:         tunnel_switch;             // defines the track drawn on a tunnel tile
-         depots:          spriteset_Depot;              // defines the depot sprites
+         depots:          sw_depot;              // defines the depot sprites
          bridge_surfaces: spriteset_bridgeSurface;     // defines the overlay drawn over bridges depending on climate
 		 catenary_front: sw_color;
 		 catenary_back: spriteset_cback;
