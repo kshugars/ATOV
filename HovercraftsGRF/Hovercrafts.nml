@@ -34,6 +34,7 @@ property{
         default_cargo_type: CC_PASSENGERS;
         sprite_id: SPRITE_ID_NEW_SHIP;
 		sound_effect: SOUND_DEPARTURE_FERRY;
+		sound_effect: 	SOUND_BREAKDOWN_TRAIN_SHIP;
 		}
 	    graphics {
         default: spriteset_dolphin;
@@ -68,6 +69,7 @@ property{
         default_cargo_type: CC_PASSENGERS;
         sprite_id: SPRITE_ID_NEW_SHIP;
 		sound_effect: SOUND_DEPARTURE_FERRY;
+		sound_effect: 	SOUND_BREAKDOWN_TRAIN_SHIP;
 		}
 	    graphics {
         default: spriteset_orca;
@@ -105,6 +107,7 @@ property{
         default_cargo_type: CC_EXPRESS;
         sprite_id: SPRITE_ID_NEW_SHIP;
 		sound_effect: SOUND_DEPARTURE_CARGO_SHIP;
+		sound_effect: 	SOUND_BREAKDOWN_TRAIN_SHIP;
 		is_refittable: 1;
 		refit_cost: 10;		
 		//refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE, CC_NEO_BULK);

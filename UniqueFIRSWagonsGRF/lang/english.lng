@@ -1,0 +1,76 @@
+##grflangid 0x0
+STR_GRF_NAME	:{TITLE} - {VERSION}
+STR_GRF_DESC	:ATOV - Add to original vehicles. Adds new grafics for each FIRS cargo, both loaded and unloaded, that is not already in openTTD. Designed to be used with original vehicle set.
+STR_GRF_URL		:https://github.com/kshugars/ATOV
+
+# vehicle names
+STR_Acid_NAME:Acid Tanker
+STR_NH3__NAME:Ammonia Tanker
+STR_RFPR_NAME:Chemical Tanker
+STR_CHLO_NAME:Chlorine Tanker
+STR_SOAP_NAME:Cleaning Agent Tanker
+STR_CTAR_NAME:Coal Tar Tanker
+STR_MILK_NAME:Milk Tanker
+STR_O2___NAME:Oxygen Tanker
+STR_COAT_NAME:Paints & Coatings Tanker
+STR_PETR_NAME:Petroleum Fuel Tanker
+STR_SULP_NAME:Sulphur Tanker
+STR_EOIL_NAME: Edible Oil Tanker
+
+STR_BEAN_NAME:Bean Hopper
+STR_CBLK_NAME:Carbon Black Hopper
+STR_CMNT_NAME:Cement Hopper
+STR_JAVA_NAME:Coffee Hopper
+STR_COKE_NAME:Coke Hopper
+STR_FECR_NAME:Ferrochrome Hopper
+STR_FERT_NAME:Fertiliser Hopper
+STR_FISH_NAME:Fish Hopper
+STR_KAOL_NAME:China Clay Hopper
+STR_LIME_NAME:Limestone Hopper
+STR_LYE__NAME:Sodium Hydroxide Hopper
+STR_MNO2_NAME:Manganese Hopper
+STR_NITR_NAME:Nitrates Hopper
+STR_PEAT_NAME:Peat Hopper
+STR_PHOS_NAME:Phosphate Hopper
+STR_IRON_NAME:Pig Iron Hopper
+STR_POTA_NAME:Potash Hopper
+STR_PORE_NAME:Pyrite Ore Hopper
+STR_QLME_NAME:Quicklime Hopper
+STR_SALT_NAME:Salt Hopper
+STR_SAND_NAME:Sand Hopper
+STR_SCMT_NAME:Scrap Metal Hopper
+STR_SLAG_NAME:Slag Hopper
+STR_SASH_NAME:Soda Ash Hopper
+STR_CASS_NAME:Cassava Hopper
+STR_CLAY_NAME:Clay Hopper
+STR_NUTS_NAME:Nuts Hopper
+STR_GRVL_NAME:Stone Hopper
+
+STR_BEER_NAME:Alcohol Boxcar
+STR_POWR_NAME:Electrical Parts Boxcar
+STR_ENSP_NAME:Engineering Supplies Boxcar
+STR_BOOM_NAME:Explosives Boxcar
+STR_VPTS_NAME:Vehicle Parts Boxcar
+STR_WOOL_NAME:Wool Boxcar
+STR_ZINC_NAME:Zinc Boxcar
+
+STR_STAL_NAME:Alloy Steel Car
+STR_ALUM_NAME:Aluminum Car
+STR_STCB_NAME:Carbon Steel Car
+STR_CSTI_NAME:Cast Iron Car
+STR_COPR_NAME:Copper Car
+STR_FMSP_NAME:Farm Supplies Car
+STR_GLAS_NAME:Glass Car
+STR_PIPE_NAME:Pipe Car
+STR_PLAS_NAME:Plastics Car
+STR_RBAR_NAME:Rebar Car
+STR_STST_NAME:Stainless Steel Car
+STR_STSE_NAME:Steel Sections Car
+STR_STSH_NAME:Steel Sheet Car
+STR_STWR_NAME:Steel Wire Rod Car
+STR_WDPR_NAME:Timber Car
+STR_TYRE_NAME:Tire Car
+STR_VBOD_NAME:Vehicle Body Car
+STR_VENG_NAME:Vehicle Engine Car
+STR_VEHI_NAME:Vehicle Car
+STR_BDMT_NAME:Building Material Car

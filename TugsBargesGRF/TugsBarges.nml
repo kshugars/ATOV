@@ -57,6 +57,7 @@ property{
         default_cargo_type: WOOD;
         sprite_id: SPRITE_ID_NEW_SHIP;
 		sound_effect: SOUND_DEPARTURE_CARGO_SHIP;
+		sound_effect: 	SOUND_BREAKDOWN_TRAIN_SHIP;
 		}
 	    graphics {
         default: spriteset_LumberTug1;
@@ -109,6 +110,7 @@ property{
         default_cargo_type: WOOD;
         sprite_id: SPRITE_ID_NEW_SHIP;
 		sound_effect: SOUND_DEPARTURE_CARGO_SHIP;
+		sound_effect: 	SOUND_BREAKDOWN_TRAIN_SHIP;
 		}
 	    graphics {
         default: spriteset_LumberTug2;
@@ -199,6 +201,7 @@ property{
 		refittable_cargo_classes: bitmask(CC_BULK);
         sprite_id: SPRITE_ID_NEW_SHIP;
 		sound_effect: SOUND_DEPARTURE_CARGO_SHIP;
+		sound_effect: 	SOUND_BREAKDOWN_TRAIN_SHIP;
 		}
 	    graphics {
 		COAL: spritegroup_Barge1Coal;
@@ -297,6 +300,7 @@ property{
 		refittable_cargo_classes: bitmask(CC_BULK);
         sprite_id: SPRITE_ID_NEW_SHIP;
 		sound_effect: SOUND_DEPARTURE_CARGO_SHIP;
+		sound_effect: 	SOUND_BREAKDOWN_TRAIN_SHIP;
 		}
 	    graphics {
 		COAL: spritegroup_Barge2Coal;

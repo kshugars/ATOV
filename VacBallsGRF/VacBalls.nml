@@ -76,6 +76,7 @@ property{
         sprite_id: SPRITE_ID_NEW_ROADVEH;
 		default_cargo_type: PASS;
 		sound_effect: 	SOUND_DEPARTURE_MAGLEV;
+		sound_effect: 	SOUND_BREAKDOWN_TRAIN_SHIP;
 		 misc_flags: bitmask(ROADVEH_FLAG_TRAM);
 		 tram_type: VACB;
 		}
@@ -107,6 +108,7 @@ property{
 		default_cargo_type: VALU;
 		refittable_cargo_classes: bitmask(CC_ARMOURED);
 		sound_effect: 	SOUND_DEPARTURE_MAGLEV;
+		sound_effect: 	SOUND_BREAKDOWN_TRAIN_SHIP;
 		 misc_flags: bitmask(ROADVEH_FLAG_TRAM);
 		 tram_type: VACB;
 		}
@@ -136,6 +138,7 @@ property{
         sprite_id: SPRITE_ID_NEW_ROADVEH;
 		default_cargo_type: GOOD;
 		sound_effect: 	SOUND_DEPARTURE_MAGLEV;
+		sound_effect: 	SOUND_BREAKDOWN_TRAIN_SHIP;
 		 misc_flags: bitmask(ROADVEH_FLAG_TRAM);
 		 tram_type: VACB;
 		}
@@ -165,6 +168,7 @@ property{
         sprite_id: SPRITE_ID_NEW_ROADVEH;
 		default_cargo_type: FOOD;
 		sound_effect: 	SOUND_DEPARTURE_MAGLEV;
+		sound_effect: 	SOUND_BREAKDOWN_TRAIN_SHIP;
 		 misc_flags: bitmask(ROADVEH_FLAG_TRAM);
 		 tram_type: VACB;
 		}
@@ -194,6 +198,7 @@ property{
         sprite_id: SPRITE_ID_NEW_ROADVEH;
 		default_cargo_type: PASS;
 		sound_effect: 	SOUND_DEPARTURE_MAGLEV;
+		sound_effect: 	SOUND_BREAKDOWN_TRAIN_SHIP;
 		 misc_flags: bitmask(ROADVEH_FLAG_TRAM);
 		 tram_type: VACB;
 		}
@@ -225,6 +230,7 @@ property{
 		default_cargo_type: VALU;
 		refittable_cargo_classes: bitmask(CC_ARMOURED);
 		sound_effect: 	SOUND_DEPARTURE_MAGLEV;
+		sound_effect: 	SOUND_BREAKDOWN_TRAIN_SHIP;
 		 misc_flags: bitmask(ROADVEH_FLAG_TRAM);
 		 tram_type: VACB;
 		}
@@ -254,6 +260,7 @@ property{
         sprite_id: SPRITE_ID_NEW_ROADVEH;
 		default_cargo_type: GOOD;
 		sound_effect: 	SOUND_DEPARTURE_MAGLEV;
+		sound_effect: 	SOUND_BREAKDOWN_TRAIN_SHIP;
 		 misc_flags: bitmask(ROADVEH_FLAG_TRAM);
 		 tram_type: VACB;
 		}
@@ -283,6 +290,7 @@ property{
         sprite_id: SPRITE_ID_NEW_ROADVEH;
 		default_cargo_type: FOOD;
 		sound_effect: 	SOUND_DEPARTURE_MAGLEV;
+		sound_effect: 	SOUND_BREAKDOWN_TRAIN_SHIP;
 		 misc_flags: bitmask(ROADVEH_FLAG_TRAM);
 		 tram_type: VACB;
 		}
