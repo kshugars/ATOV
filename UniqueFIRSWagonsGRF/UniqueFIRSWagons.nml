@@ -11,7 +11,8 @@ grf {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR,
+	AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW
 	}
 
 	template tmpl_rail(y) {
@@ -962,6 +963,84 @@ template tmpl_monoLev(y) {
     }
     graphics {
         default: spriteset_EOILMonoLev;
+    }
+	}
+
+/*-N7__-*/
+	spriteset(spriteset_N7__RailE, "gfx/FIRS_Tanker_Wagons.png") { 
+    tmpl_rail(600) }
+	
+	spriteset(spriteset_N7__RailL, "gfx/FIRS_Tanker_Wagons.png") { 
+    tmpl_rail(625) }
+	
+	spritegroup spriteset_N7__Rail {
+    loaded:  [spriteset_N7__RailE, spriteset_N7__RailL];
+    loading: [spriteset_N7__RailE, spriteset_N7__RailL];
+	}
+	
+	spriteset(spriteset_N7__MonoLevE, "gfx/FIRS_Tanker_Wagons.png") { 
+    tmpl_monoLev(600) }
+	
+	spriteset(spriteset_N7__MonoLevL, "gfx/FIRS_Tanker_Wagons.png") { 
+    tmpl_monoLev(625) }
+	
+	spritegroup spriteset_N7__MonoLev {
+    loaded:  [spriteset_N7__MonoLevE, spriteset_N7__MonoLevL];
+    loading: [spriteset_N7__MonoLevE, spriteset_N7__MonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_N7__Rail) {
+    property {
+        name: string(STR_N7___NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: N7__;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_N7__Rail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_N7__Mono) {
+    property {
+        name: string(STR_N7___NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: N7__;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_N7__MonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_N7__Lev) {
+    property {
+        name: string(STR_N7___NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: N7__;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_N7__MonoLev;
     }
 	}
 	
@@ -3148,6 +3227,554 @@ template tmpl_monoLev(y) {
         default: spriteset_GRVLMonoLev;
     }
 	}
+
+/*-AORE-*/
+	spriteset(spriteset_AORERailE, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_rail(1400) }
+	
+	spriteset(spriteset_AORERailL, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_rail(1425) }
+	
+	spritegroup spriteset_AORERail {
+    loaded:  [spriteset_AORERailE, spriteset_AORERailL];
+    loading: [spriteset_AORERailE, spriteset_AORERailL];
+	}
+	
+	spriteset(spriteset_AOREMonoLevE, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_monoLev(1400) }
+	
+	spriteset(spriteset_AOREMonoLevL, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_monoLev(1425) }
+	
+	spritegroup spriteset_AOREMonoLev {
+    loaded:  [spriteset_AOREMonoLevE, spriteset_AOREMonoLevL];
+    loading: [spriteset_AOREMonoLevE, spriteset_AOREMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_AORERail) {
+    property {
+        name: string(STR_AORE_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: AORE;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_AORERail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_AOREMono) {
+    property {
+        name: string(STR_AORE_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: AORE;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_AOREMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_AORELev) {
+    property {
+        name: string(STR_AORE_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: AORE;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_AOREMonoLev;
+    }
+	}
+
+/*-FICR-*/
+	spriteset(spriteset_FICRRailE, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_rail(1450) }
+	
+	spriteset(spriteset_FICRRailL, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_rail(1475) }
+	
+	spritegroup spriteset_FICRRail {
+    loaded:  [spriteset_FICRRailE, spriteset_FICRRailL];
+    loading: [spriteset_FICRRailE, spriteset_FICRRailL];
+	}
+	
+	spriteset(spriteset_FICRMonoLevE, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_monoLev(1450) }
+	
+	spriteset(spriteset_FICRMonoLevL, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_monoLev(1475) }
+	
+	spritegroup spriteset_FICRMonoLev {
+    loaded:  [spriteset_FICRMonoLevE, spriteset_FICRMonoLevL];
+    loading: [spriteset_FICRMonoLevE, spriteset_FICRMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_FICRRail) {
+    property {
+        name: string(STR_FICR_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: FICR;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_FICRRail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_FICRMono) {
+    property {
+        name: string(STR_FICR_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: FICR;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_FICRMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_FICRLev) {
+    property {
+        name: string(STR_FICR_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: FICR;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_FICRMonoLev;
+    }
+	}
+
+/*-RCYC-*/
+	spriteset(spriteset_RCYCRailE, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_rail(1500) }
+	
+	spriteset(spriteset_RCYCRailL, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_rail(1525) }
+	
+	spritegroup spriteset_RCYCRail {
+    loaded:  [spriteset_RCYCRailE, spriteset_RCYCRailL];
+    loading: [spriteset_RCYCRailE, spriteset_RCYCRailL];
+	}
+	
+	spriteset(spriteset_RCYCMonoLevE, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_monoLev(1500) }
+	
+	spriteset(spriteset_RCYCMonoLevL, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_monoLev(1525) }
+	
+	spritegroup spriteset_RCYCMonoLev {
+    loaded:  [spriteset_RCYCMonoLevE, spriteset_RCYCMonoLevL];
+    loading: [spriteset_RCYCMonoLevE, spriteset_RCYCMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_RCYCRail) {
+    property {
+        name: string(STR_RCYC_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: RCYC;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_RCYCRail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_RCYCMono) {
+    property {
+        name: string(STR_RCYC_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: RCYC;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_RCYCMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_RCYCLev) {
+    property {
+        name: string(STR_RCYC_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: RCYC;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_RCYCMonoLev;
+    }
+	}
+
+/*-SGBT-*/
+	spriteset(spriteset_SGBTRailE, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_rail(1550) }
+	
+	spriteset(spriteset_SGBTRailL, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_rail(1575) }
+	
+	spritegroup spriteset_SGBTRail {
+    loaded:  [spriteset_SGBTRailE, spriteset_SGBTRailL];
+    loading: [spriteset_SGBTRailE, spriteset_SGBTRailL];
+	}
+	
+	spriteset(spriteset_SGBTMonoLevE, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_monoLev(1550) }
+	
+	spriteset(spriteset_SGBTMonoLevL, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_monoLev(1575) }
+	
+	spritegroup spriteset_SGBTMonoLev {
+    loaded:  [spriteset_SGBTMonoLevE, spriteset_SGBTMonoLevL];
+    loading: [spriteset_SGBTMonoLevE, spriteset_SGBTMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_SGBTRail) {
+    property {
+        name: string(STR_SGBT_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: SGBT;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_SGBTRail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_SGBTMono) {
+    property {
+        name: string(STR_SGBT_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: SGBT;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_SGBTMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_SGBTLev) {
+    property {
+        name: string(STR_SGBT_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: SGBT;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_SGBTMonoLev;
+    }
+	}
+
+/*-SUGR-*/
+	spriteset(spriteset_SUGRRailE, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_rail(1600) }
+	
+	spriteset(spriteset_SUGRRailL, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_rail(1625) }
+	
+	spritegroup spriteset_SUGRRail {
+    loaded:  [spriteset_SUGRRailE, spriteset_SUGRRailL];
+    loading: [spriteset_SUGRRailE, spriteset_SUGRRailL];
+	}
+	
+	spriteset(spriteset_SUGRMonoLevE, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_monoLev(1600) }
+	
+	spriteset(spriteset_SUGRMonoLevL, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_monoLev(1625) }
+	
+	spritegroup spriteset_SUGRMonoLev {
+    loaded:  [spriteset_SUGRMonoLevE, spriteset_SUGRMonoLevL];
+    loading: [spriteset_SUGRMonoLevE, spriteset_SUGRMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_SUGRRail) {
+    property {
+        name: string(STR_SUGR_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: SUGR;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_SUGRRail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_SUGRMono) {
+    property {
+        name: string(STR_SUGR_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: SUGR;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_SUGRMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_SUGRLev) {
+    property {
+        name: string(STR_SUGR_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: SUGR;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_SUGRMonoLev;
+    }
+	}
+
+/*-SGCN-*/
+	spriteset(spriteset_SGCNRailE, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_rail(1650) }
+	
+	spriteset(spriteset_SGCNRailL, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_rail(1675) }
+	
+	spritegroup spriteset_SGCNRail {
+    loaded:  [spriteset_SGCNRailE, spriteset_SGCNRailL];
+    loading: [spriteset_SGCNRailE, spriteset_SGCNRailL];
+	}
+	
+	spriteset(spriteset_SGCNMonoLevE, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_monoLev(1650) }
+	
+	spriteset(spriteset_SGCNMonoLevL, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_monoLev(1675) }
+	
+	spritegroup spriteset_SGCNMonoLev {
+    loaded:  [spriteset_SGCNMonoLevE, spriteset_SGCNMonoLevL];
+    loading: [spriteset_SGCNMonoLevE, spriteset_SGCNMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_SGCNRail) {
+    property {
+        name: string(STR_SGCN_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: SGCN;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_SGCNRail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_SGCNMono) {
+    property {
+        name: string(STR_SGCN_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: SGCN;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_SGCNMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_SGCNLev) {
+    property {
+        name: string(STR_SGCN_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: SGCN;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_SGCNMonoLev;
+    }
+	}
+
+/*-FEAL-*/
+	spriteset(spriteset_FEALRailE, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_rail(1700) }
+	
+	spriteset(spriteset_FEALRailL, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_rail(1725) }
+	
+	spritegroup spriteset_FEALRail {
+    loaded:  [spriteset_FEALRailE, spriteset_FEALRailL];
+    loading: [spriteset_FEALRailE, spriteset_FEALRailL];
+	}
+	
+	spriteset(spriteset_FEALMonoLevE, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_monoLev(1700) }
+	
+	spriteset(spriteset_FEALMonoLevL, "gfx/FIRS_Hopper_Wagons.png") { 
+    tmpl_monoLev(1725) }
+	
+	spritegroup spriteset_FEALMonoLev {
+    loaded:  [spriteset_FEALMonoLevE, spriteset_FEALMonoLevL];
+    loading: [spriteset_FEALMonoLevE, spriteset_FEALMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_FEALRail) {
+    property {
+        name: string(STR_FEAL_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: FEAL;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_FEALRail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_FEALMono) {
+    property {
+        name: string(STR_FEAL_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: FEAL;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_FEALMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_FEALLev) {
+    property {
+        name: string(STR_FEAL_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: FEAL;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_FEALMonoLev;
+    }
+	}
+
+
 	
 	/*----------------------------BOX CARS-----------------------------*/
 	/*-BEER-*/
@@ -3695,6 +4322,632 @@ template tmpl_monoLev(y) {
         default: spriteset_ZINCMonoLev;
     }
 	}
+
+/*-MNSP-*/
+	spriteset(spriteset_MNSPRailE, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_rail(350) }
+	
+	spriteset(spriteset_MNSPRailL, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_rail(375) }
+	
+	spritegroup spriteset_MNSPRail {
+    loaded:  [spriteset_MNSPRailE, spriteset_MNSPRailL];
+    loading: [spriteset_MNSPRailE, spriteset_MNSPRailL];
+	}
+	
+	spriteset(spriteset_MNSPMonoLevE, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_monoLev(350) }
+	
+	spriteset(spriteset_MNSPMonoLevL, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_monoLev(375) }
+	
+	spritegroup spriteset_MNSPMonoLev {
+    loaded:  [spriteset_MNSPMonoLevE, spriteset_MNSPMonoLevL];
+    loading: [spriteset_MNSPMonoLevE, spriteset_MNSPMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_MNSPRail) {
+    property {
+        name: string(STR_MNSP_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: MNSP;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_MNSPRail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_MNSPMono) {
+    property {
+        name: string(STR_MNSP_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: MNSP;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_MNSPMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_MNSPLev) {
+    property {
+        name: string(STR_MNSP_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: MNSP;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_MNSPMonoLev;
+    }
+	}
+	
+/*-FOCA-*/
+	spriteset(spriteset_FOCARailE, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_rail(400) }
+	
+	spriteset(spriteset_FOCARailL, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_rail(425) }
+	
+	spritegroup spriteset_FOCARail {
+    loaded:  [spriteset_FOCARailE, spriteset_FOCARailL];
+    loading: [spriteset_FOCARailE, spriteset_FOCARailL];
+	}
+	
+	spriteset(spriteset_FOCAMonoLevE, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_monoLev(400) }
+	
+	spriteset(spriteset_FOCAMonoLevL, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_monoLev(425) }
+	
+	spritegroup spriteset_FOCAMonoLev {
+    loaded:  [spriteset_FOCAMonoLevE, spriteset_FOCAMonoLevL];
+    loading: [spriteset_FOCAMonoLevE, spriteset_FOCAMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_FOCARail) {
+    property {
+        name: string(STR_FOCA_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: FOCA;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_FOCARail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_FOCAMono) {
+    property {
+        name: string(STR_FOCA_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: FOCA;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_FOCAMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_FOCALev) {
+    property {
+        name: string(STR_FOCA_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: FOCA;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_FOCAMonoLev;
+    }
+	}
+	
+/*-HWAR-*/
+	spriteset(spriteset_HWARRailE, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_rail(450) }
+	
+	spriteset(spriteset_HWARRailL, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_rail(475) }
+	
+	spritegroup spriteset_HWARRail {
+    loaded:  [spriteset_HWARRailE, spriteset_HWARRailL];
+    loading: [spriteset_HWARRailE, spriteset_HWARRailL];
+	}
+	
+	spriteset(spriteset_HWARMonoLevE, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_monoLev(450) }
+	
+	spriteset(spriteset_HWARMonoLevL, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_monoLev(475) }
+	
+	spritegroup spriteset_HWARMonoLev {
+    loaded:  [spriteset_HWARMonoLevE, spriteset_HWARMonoLevL];
+    loading: [spriteset_HWARMonoLevE, spriteset_HWARMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_HWARRail) {
+    property {
+        name: string(STR_HWAR_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: HWAR;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_HWARRail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_HWARMono) {
+    property {
+        name: string(STR_HWAR_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: HWAR;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_HWARMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_HWARLev) {
+    property {
+        name: string(STR_HWAR_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: HWAR;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_HWARMonoLev;
+    }
+	}
+	
+/*-PPWK-*/
+	spriteset(spriteset_PPWKRailE, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_rail(650) }
+	
+	spriteset(spriteset_PPWKRailL, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_rail(675) }
+	
+	spritegroup spriteset_PPWKRail {
+    loaded:  [spriteset_PPWKRailE, spriteset_PPWKRailL];
+    loading: [spriteset_PPWKRailE, spriteset_PPWKRailL];
+	}
+	
+	spriteset(spriteset_PPWKMonoLevE, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_monoLev(650) }
+	
+	spriteset(spriteset_PPWKMonoLevL, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_monoLev(675) }
+	
+	spritegroup spriteset_PPWKMonoLev {
+    loaded:  [spriteset_PPWKMonoLevE, spriteset_PPWKMonoLevL];
+    loading: [spriteset_PPWKMonoLevE, spriteset_PPWKMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_PPWKRail) {
+    property {
+        name: string(STR_PPWK_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: PPWK;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_PPWKRail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_PPWKMono) {
+    property {
+        name: string(STR_PPWK_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: PPWK;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_PPWKMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_PPWKLev) {
+    property {
+        name: string(STR_PPWK_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: PPWK;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_PPWKMonoLev;
+    }
+	}
+	
+/*-PUMP-*/
+	spriteset(spriteset_PUMPRailE, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_rail(500) }
+	
+	spriteset(spriteset_PUMPRailL, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_rail(525) }
+	
+	spritegroup spriteset_PUMPRail {
+    loaded:  [spriteset_PUMPRailE, spriteset_PUMPRailL];
+    loading: [spriteset_PUMPRailE, spriteset_PUMPRailL];
+	}
+	
+	spriteset(spriteset_PUMPMonoLevE, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_monoLev(500) }
+	
+	spriteset(spriteset_PUMPMonoLevL, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_monoLev(525) }
+	
+	spritegroup spriteset_PUMPMonoLev {
+    loaded:  [spriteset_PUMPMonoLevE, spriteset_PUMPMonoLevL];
+    loading: [spriteset_PUMPMonoLevE, spriteset_PUMPMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_PUMPRail) {
+    property {
+        name: string(STR_PUMP_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: PUMP;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_PUMPRail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_PUMPMono) {
+    property {
+        name: string(STR_PUMP_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: PUMP;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_PUMPMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_PUMPLev) {
+    property {
+        name: string(STR_PUMP_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: PUMP;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_PUMPMonoLev;
+    }
+	}
+	
+/*-ELAS-*/
+	spriteset(spriteset_ELASRailE, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_rail(550) }
+	
+	spriteset(spriteset_ELASRailL, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_rail(575) }
+	
+	spritegroup spriteset_ELASRail {
+    loaded:  [spriteset_ELASRailE, spriteset_ELASRailL];
+    loading: [spriteset_ELASRailE, spriteset_ELASRailL];
+	}
+	
+	spriteset(spriteset_ELASMonoLevE, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_monoLev(550) }
+	
+	spriteset(spriteset_ELASMonoLevL, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_monoLev(575) }
+	
+	spritegroup spriteset_ELASMonoLev {
+    loaded:  [spriteset_ELASMonoLevE, spriteset_ELASMonoLevL];
+    loading: [spriteset_ELASMonoLevE, spriteset_ELASMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_ELASRail) {
+    property {
+        name: string(STR_ELAS_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: ELAS;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_ELASRail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_ELASMono) {
+    property {
+        name: string(STR_ELAS_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: ELAS;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_ELASMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_ELASLev) {
+    property {
+        name: string(STR_ELAS_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: ELAS;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_ELASMonoLev;
+    }
+	}
+	
+/*-WELD-*/
+	spriteset(spriteset_WELDRailE, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_rail(600) }
+	
+	spriteset(spriteset_WELDRailL, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_rail(625) }
+	
+	spritegroup spriteset_WELDRail {
+    loaded:  [spriteset_WELDRailE, spriteset_WELDRailL];
+    loading: [spriteset_WELDRailE, spriteset_WELDRailL];
+	}
+	
+	spriteset(spriteset_WELDMonoLevE, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_monoLev(600) }
+	
+	spriteset(spriteset_WELDMonoLevL, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_monoLev(625) }
+	
+	spritegroup spriteset_WELDMonoLev {
+    loaded:  [spriteset_WELDMonoLevE, spriteset_WELDMonoLevL];
+    loading: [spriteset_WELDMonoLevE, spriteset_WELDMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_WELDRail) {
+    property {
+        name: string(STR_WELD_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: WELD;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_WELDRail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_WELDMono) {
+    property {
+        name: string(STR_WELD_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: WELD;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_WELDMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_WELDLev) {
+    property {
+        name: string(STR_WELD_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: WELD;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_WELDMonoLev;
+    }
+	}
+	
+/*-SEAL-*/
+	spriteset(spriteset_SEALRailE, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_rail(550) }
+	
+	spriteset(spriteset_SEALRailL, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_rail(575) }
+	
+	spritegroup spriteset_SEALRail {
+    loaded:  [spriteset_SEALRailE, spriteset_SEALRailL];
+    loading: [spriteset_SEALRailE, spriteset_SEALRailL];
+	}
+	
+	spriteset(spriteset_SEALMonoLevE, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_monoLev(550) }
+	
+	spriteset(spriteset_SEALMonoLevL, "gfx/FIRS_BoxCar_Wagons.png") { 
+    tmpl_monoLev(575) }
+	
+	spritegroup spriteset_SEALMonoLev {
+    loaded:  [spriteset_SEALMonoLevE, spriteset_SEALMonoLevL];
+    loading: [spriteset_SEALMonoLevE, spriteset_SEALMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_SEALRail) {
+    property {
+        name: string(STR_SEAL_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: SEAL;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_SEALRail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_SEALMono) {
+    property {
+        name: string(STR_SEAL_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: SEAL;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_SEALMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_SEALLev) {
+    property {
+        name: string(STR_SEAL_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: SEAL;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_SEALMonoLev;
+    }
+	}
+	
+
 	
 	/*-------------------------------FLAT BED--------------------------------------*/
 	/*-STAL-*/
@@ -5038,11 +6291,10 @@ template tmpl_monoLev(y) {
     loading: [spriteset_VBODRailE, spriteset_VBODRailL2];
 	}
 	
-		switch (FEAT_TRAINS, SELF, sw_VBODRail, (random_bits)) {
-	0..127: spriteset_VBODRail;
-	128..256: spriteset_VBODRail2;
-	spriteset_VBODRail2;
-	}
+		random_switch (FEAT_TRAINS, SELF, sw_VBODRail, 2) {
+    1: spriteset_VBODRail;
+    1: spriteset_VBODRail2;
+}
 	
 	spriteset(spriteset_VBODMonoLevE, "gfx/FIRS_FlatBed_Wagons.png") { 
     tmpl_monoLev(750) }
@@ -5062,11 +6314,10 @@ template tmpl_monoLev(y) {
     loading: [spriteset_VBODMonoLevE, spriteset_VBODMonoLevL2];
 	}
 	
-			switch (FEAT_TRAINS, SELF, sw_VBODMonoLev, (random_bits)) {
-	0..127: spriteset_VBODMonoLev;
-	128..256: spriteset_VBODMonoLev2;
-	spriteset_VBODMonoLev2;
-	}
+			random_switch (FEAT_TRAINS, SELF, sw_VBODMonoLev, 2) {
+    1: spriteset_VBODMonoLev;
+    1: spriteset_VBODMonoLev2;
+}
 	
 	item(FEAT_TRAINS, cargo_VBODRail) {
     property {
@@ -5077,7 +6328,9 @@ template tmpl_monoLev(y) {
 		track_type: RAIL;
         default_cargo_type: VBOD;
         sprite_id: SPRITE_ID_NEW_TRAIN;
-        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        misc_flags: bitmask(
+    TRAIN_FLAG_SPRITE_STACK
+);
         cargo_capacity: 30;
         weight: 20 ton;
         cost_factor: 200;
@@ -5095,7 +6348,9 @@ template tmpl_monoLev(y) {
 		track_type: MONO;
         default_cargo_type: VBOD;
         sprite_id: SPRITE_ID_NEW_TRAIN;
-        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        misc_flags: bitmask(
+    TRAIN_FLAG_SPRITE_STACK
+);
         cargo_capacity: 35;
         weight: 20 ton;
 		cost_factor: 200;
@@ -5113,7 +6368,9 @@ template tmpl_monoLev(y) {
 		track_type: MGLV;
         default_cargo_type: VBOD;
         sprite_id: SPRITE_ID_NEW_TRAIN;
-        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        misc_flags: bitmask(
+    TRAIN_FLAG_SPRITE_STACK
+);
         cargo_capacity: 40;
         weight: 20 ton;
         cost_factor: 200;
@@ -5148,14 +6405,12 @@ template tmpl_monoLev(y) {
     loaded:  [spriteset_FMSPRailE, spriteset_FMSPRailL3];
     loading: [spriteset_FMSPRailE, spriteset_FMSPRailL3];
 	}
-	
-	
-		switch (FEAT_TRAINS, SELF, sw_FMSPRail, (random_bits)) {
-	0..85: spriteset_FMSPRail;
-	86..170: spriteset_FMSPRail2;
-	171..256: spriteset_FMSPRail3;
-	spriteset_FMSPRail2;
-	}
+
+random_switch (FEAT_TRAINS, SELF, sw_FMSPRail, 3) {
+    1: spriteset_FMSPRail;
+    1: spriteset_FMSPRail2;
+    1: spriteset_FMSPRail3;
+}
 	
 	spriteset(spriteset_FMSPMonoLevE, "gfx/FIRS_FlatBed_Wagons.png") { 
     tmpl_monoLev(875) }
@@ -5182,12 +6437,11 @@ template tmpl_monoLev(y) {
     loading: [spriteset_FMSPMonoLevE, spriteset_FMSPMonoLevL3];
 	}
 	
-			switch (FEAT_TRAINS, SELF, sw_FMSPMonoLev, (random_bits)) {
-	0..85: spriteset_FMSPMonoLev;
-	86..170: spriteset_FMSPMonoLev2;
-	171..256: spriteset_FMSPMonoLev3;
-	spriteset_FMSPRail2;
-	}
+random_switch (FEAT_TRAINS, SELF, sw_FMSPMonoLev, 3) {
+    1: spriteset_FMSPMonoLev;
+    1: spriteset_FMSPMonoLev2;
+    1: spriteset_FMSPMonoLev3;
+}
 	
 	item(FEAT_TRAINS, cargo_FMSPRail) {
     property {
@@ -5198,7 +6452,9 @@ template tmpl_monoLev(y) {
 		track_type: RAIL;
         default_cargo_type: FMSP;
         sprite_id: SPRITE_ID_NEW_TRAIN;
-        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        misc_flags: bitmask(
+    TRAIN_FLAG_SPRITE_STACK
+);
         cargo_capacity: 30;
         weight: 20 ton;
         cost_factor: 200;
@@ -5216,7 +6472,9 @@ template tmpl_monoLev(y) {
 		track_type: MONO;
         default_cargo_type: FMSP;
         sprite_id: SPRITE_ID_NEW_TRAIN;
-        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        misc_flags: bitmask(
+    TRAIN_FLAG_SPRITE_STACK
+);
         cargo_capacity: 35;
         weight: 20 ton;
 		cost_factor: 200;
@@ -5234,7 +6492,9 @@ template tmpl_monoLev(y) {
 		track_type: MGLV;
         default_cargo_type: FMSP;
         sprite_id: SPRITE_ID_NEW_TRAIN;
-        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        misc_flags: bitmask(
+    TRAIN_FLAG_SPRITE_STACK
+);
         cargo_capacity: 40;
         weight: 20 ton;
         cost_factor: 200;
@@ -5278,11 +6538,10 @@ template tmpl_VEHImonoLev(y) {
     loading: [spriteset_VEHIRailE, spriteset_VEHIRailL2];
 	}
 	
-		switch (FEAT_TRAINS, SELF, sw_VEHIRail, (random_bits)) {
-	0..127: spriteset_VEHIRail;
-	128..256: spriteset_VEHIRail2;
-	spriteset_VEHIRail2;
-	}
+random_switch (FEAT_TRAINS, SELF, sw_VEHIRail, 2) {
+    1: spriteset_VEHIRail;
+    1: spriteset_VEHIRail2;
+}
 	
 	spriteset(spriteset_VEHIMonoLevE, "gfx/FIRS_FlatBed_Wagons.png") { 
     tmpl_VEHImonoLev(975) }
@@ -5301,12 +6560,11 @@ template tmpl_VEHImonoLev(y) {
     loaded:  [spriteset_VEHIMonoLevE, spriteset_VEHIMonoLevL2];
     loading: [spriteset_VEHIMonoLevE, spriteset_VEHIMonoLevL2];
 	}
-	
-			switch (FEAT_TRAINS, SELF, sw_VEHIMonoLev, (random_bits)) {
-	0..127: spriteset_VEHIMonoLev;
-	128..256: spriteset_VEHIMonoLev2;
-	spriteset_VEHIMonoLev2;
-	}
+
+random_switch (FEAT_TRAINS, SELF, sw_VEHIMonoLev, 2) {
+    1: spriteset_VEHIMonoLev;
+    1: spriteset_VEHIMonoLev2;
+}
 	
 	item(FEAT_TRAINS, cargo_VEHIRail) {
     property {
@@ -5317,7 +6575,10 @@ template tmpl_VEHImonoLev(y) {
 		track_type: RAIL;
         default_cargo_type: VEHI;
         sprite_id: SPRITE_ID_NEW_TRAIN;
-        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        misc_flags: bitmask(
+    TRAIN_FLAG_SPRITE_STACK
+);
+
         cargo_capacity: 30;
         weight: 20 ton;
         cost_factor: 200;
@@ -5335,7 +6596,9 @@ template tmpl_VEHImonoLev(y) {
 		track_type: MONO;
         default_cargo_type: VEHI;
         sprite_id: SPRITE_ID_NEW_TRAIN;
-        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        misc_flags: bitmask(
+    TRAIN_FLAG_SPRITE_STACK
+);
         cargo_capacity: 35;
         weight: 20 ton;
 		cost_factor: 200;
@@ -5353,7 +6616,9 @@ template tmpl_VEHImonoLev(y) {
 		track_type: MGLV;
         default_cargo_type: VEHI;
         sprite_id: SPRITE_ID_NEW_TRAIN;
-        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        misc_flags: bitmask(
+    TRAIN_FLAG_SPRITE_STACK
+);
         cargo_capacity: 40;
         weight: 20 ton;
         cost_factor: 200;
@@ -5362,6 +6627,932 @@ template tmpl_VEHImonoLev(y) {
         default: sw_VEHIMonoLev;
     }
 	}
+/*-METL-*/
+	spriteset(spriteset_METLRailE, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_rail(1118) }
+	
+	spriteset(spriteset_METLRailL, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_rail(1143) }
+	
+	spritegroup spriteset_METLRail {
+    loaded:  [spriteset_METLRailE, spriteset_METLRailL];
+    loading: [spriteset_METLRailE, spriteset_METLRailL];
+	}
+	
+	spriteset(spriteset_METLMonoLevE, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_monoLev(1118) }
+	
+	spriteset(spriteset_METLMonoLevL, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_monoLev(1143) }
+	
+	spritegroup spriteset_METLMonoLev {
+    loaded:  [spriteset_METLMonoLevE, spriteset_METLMonoLevL];
+    loading: [spriteset_METLMonoLevE, spriteset_METLMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_METLRail) {
+    property {
+        name: string(STR_METL_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: METL;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_METLRail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_METLMono) {
+    property {
+        name: string(STR_METL_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: METL;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_METLMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_METLLev) {
+    property {
+        name: string(STR_METL_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: METL;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_METLMonoLev;
+    }
+	}
+/*-CCPR-*/
+	spriteset(spriteset_CCPRRailE, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_rail(1568) }
+	
+	spriteset(spriteset_CCPRRailL, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_rail(1593) }
+	
+	spritegroup spriteset_CCPRRail {
+    loaded:  [spriteset_CCPRRailE, spriteset_CCPRRailL];
+    loading: [spriteset_CCPRRailE, spriteset_CCPRRailL];
+	}
+	
+	spriteset(spriteset_CCPRMonoLevE, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_monoLev(1568) }
+	
+	spriteset(spriteset_CCPRMonoLevL, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_monoLev(1593) }
+	
+	spritegroup spriteset_CCPRMonoLev {
+    loaded:  [spriteset_CCPRMonoLevE, spriteset_CCPRMonoLevL];
+    loading: [spriteset_CCPRMonoLevE, spriteset_CCPRMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_CCPRRail) {
+    property {
+        name: string(STR_CCPR_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: CCPR;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_CCPRRail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_CCPRMono) {
+    property {
+        name: string(STR_CCPR_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: CCPR;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_CCPRMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_CCPRLev) {
+    property {
+        name: string(STR_CCPR_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: CCPR;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_CCPRMonoLev;
+    }
+	}
+/*-STBL-*/
+	spriteset(spriteset_STBLRailE, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_rail(1468) }
+	
+	spriteset(spriteset_STBLRailL, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_rail(1493) }
+	
+	spritegroup spriteset_STBLRail {
+    loaded:  [spriteset_STBLRailE, spriteset_STBLRailL];
+    loading: [spriteset_STBLRailE, spriteset_STBLRailL];
+	}
+	
+	spriteset(spriteset_STBLMonoLevE, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_monoLev(1468) }
+	
+	spriteset(spriteset_STBLMonoLevL, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_monoLev(1493) }
+	
+	spritegroup spriteset_STBLMonoLev {
+    loaded:  [spriteset_STBLMonoLevE, spriteset_STBLMonoLevL];
+    loading: [spriteset_STBLMonoLevE, spriteset_STBLMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_STBLRail) {
+    property {
+        name: string(STR_STBL_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: STBL;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_STBLRail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_STBLMono) {
+    property {
+        name: string(STR_STBL_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: STBL;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_STBLMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_STBLLev) {
+    property {
+        name: string(STR_STBL_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: STBL;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_STBLMonoLev;
+    }
+	}
+/*-STIG-*/
+	spriteset(spriteset_STIGRailE, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_rail(1168) }
+	
+	spriteset(spriteset_STIGRailL, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_rail(1193) }
+	
+	spritegroup spriteset_STIGRail {
+    loaded:  [spriteset_STIGRailE, spriteset_STIGRailL];
+    loading: [spriteset_STIGRailE, spriteset_STIGRailL];
+	}
+	
+	spriteset(spriteset_STIGMonoLevE, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_monoLev(1168) }
+	
+	spriteset(spriteset_STIGMonoLevL, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_monoLev(1193) }
+	
+	spritegroup spriteset_STIGMonoLev {
+    loaded:  [spriteset_STIGMonoLevE, spriteset_STIGMonoLevL];
+    loading: [spriteset_STIGMonoLevE, spriteset_STIGMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_STIGRail) {
+    property {
+        name: string(STR_STIG_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: STIG;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_STIGRail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_STIGMono) {
+    property {
+        name: string(STR_STIG_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: STIG;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_STIGMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_STIGLev) {
+    property {
+        name: string(STR_STIG_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: STIG;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_STIGMonoLev;
+    }
+	}
+
+/*-STBR-*/
+	spriteset(spriteset_STBRRailE, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_rail(1518) }
+	
+	spriteset(spriteset_STBRRailL, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_rail(1543) }
+	
+	spritegroup spriteset_STBRRail {
+    loaded:  [spriteset_STBRRailE, spriteset_STBRRailL];
+    loading: [spriteset_STBRRailE, spriteset_STBRRailL];
+	}
+	
+	spriteset(spriteset_STBRMonoLevE, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_monoLev(1518) }
+	
+	spriteset(spriteset_STBRMonoLevL, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_monoLev(1543) }
+	
+	spritegroup spriteset_STBRMonoLev {
+    loaded:  [spriteset_STBRMonoLevE, spriteset_STBRMonoLevL];
+    loading: [spriteset_STBRMonoLevE, spriteset_STBRMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_STBRRail) {
+    property {
+        name: string(STR_STBR_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: STBR;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_STBRRail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_STBRMono) {
+    property {
+        name: string(STR_STBR_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: STBR;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_STBRMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_STBRLev) {
+    property {
+        name: string(STR_STBR_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: STBR;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_STBRMonoLev;
+    }
+	}
+/*-STPP-*/
+	spriteset(spriteset_STPPRailE, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_rail(300) }
+	
+	spriteset(spriteset_STPPRailL, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_rail(325) }
+	
+	spritegroup spriteset_STPPRail {
+    loaded:  [spriteset_STPPRailE, spriteset_STPPRailL];
+    loading: [spriteset_STPPRailE, spriteset_STPPRailL];
+	}
+	
+	spriteset(spriteset_STPPMonoLevE, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_monoLev(300) }
+	
+	spriteset(spriteset_STPPMonoLevL, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_monoLev(325) }
+	
+	spritegroup spriteset_STPPMonoLev {
+    loaded:  [spriteset_STPPMonoLevE, spriteset_STPPMonoLevL];
+    loading: [spriteset_STPPMonoLevE, spriteset_STPPMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_STPPRail) {
+    property {
+        name: string(STR_STPP_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: STPP;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_STPPRail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_STPPMono) {
+    property {
+        name: string(STR_STPP_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: STPP;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_STPPMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_STPPLev) {
+    property {
+        name: string(STR_STPP_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: STPP;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_STPPMonoLev;
+    }
+	}
+/*-STSL-*/
+	spriteset(spriteset_STSLRailE, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_rail(1218) }
+	
+	spriteset(spriteset_STSLRailL, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_rail(1243) }
+	
+	spritegroup spriteset_STSLRail {
+    loaded:  [spriteset_STSLRailE, spriteset_STSLRailL];
+    loading: [spriteset_STSLRailE, spriteset_STSLRailL];
+	}
+	
+	spriteset(spriteset_STSLMonoLevE, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_monoLev(1218) }
+	
+	spriteset(spriteset_STSLMonoLevL, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_monoLev(1243) }
+	
+	spritegroup spriteset_STSLMonoLev {
+    loaded:  [spriteset_STSLMonoLevE, spriteset_STSLMonoLevL];
+    loading: [spriteset_STSLMonoLevE, spriteset_STSLMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_STSLRail) {
+    property {
+        name: string(STR_STSL_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: STSL;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_STSLRail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_STSLMono) {
+    property {
+        name: string(STR_STSL_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: STSL;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_STSLMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_STSLLev) {
+    property {
+        name: string(STR_STSL_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: STSL;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_STSLMonoLev;
+    }
+	}
+/*-STTB-*/
+	spriteset(spriteset_STTBRailE, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_rail(1268) }
+	
+	spriteset(spriteset_STTBRailL, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_rail(1293) }
+	
+	spritegroup spriteset_STTBRail {
+    loaded:  [spriteset_STTBRailE, spriteset_STTBRailL];
+    loading: [spriteset_STTBRailE, spriteset_STTBRailL];
+	}
+	
+	spriteset(spriteset_STTBMonoLevE, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_monoLev(1268) }
+	
+	spriteset(spriteset_STTBMonoLevL, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_monoLev(1293) }
+	
+	spritegroup spriteset_STTBMonoLev {
+    loaded:  [spriteset_STTBMonoLevE, spriteset_STTBMonoLevL];
+    loading: [spriteset_STTBMonoLevE, spriteset_STTBMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_STTBRail) {
+    property {
+        name: string(STR_STTB_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: STTB;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_STTBRail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_STTBMono) {
+    property {
+        name: string(STR_STTB_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: STTB;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_STTBMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_STTBLev) {
+    property {
+        name: string(STR_STTB_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: STTB;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_STTBMonoLev;
+    }
+	}
+/*-TYCO-*/
+	spriteset(spriteset_TYCORailE, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_rail(1368) }
+	
+	spriteset(spriteset_TYCORailL, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_rail(1393) }
+	
+	spritegroup spriteset_TYCORail {
+    loaded:  [spriteset_TYCORailE, spriteset_TYCORailL];
+    loading: [spriteset_TYCORailE, spriteset_TYCORailL];
+	}
+	
+	spriteset(spriteset_TYCOMonoLevE, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_monoLev(1368) }
+	
+	spriteset(spriteset_TYCOMonoLevL, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_monoLev(1393) }
+	
+	spritegroup spriteset_TYCOMonoLev {
+    loaded:  [spriteset_TYCOMonoLevE, spriteset_TYCOMonoLevL];
+    loading: [spriteset_TYCOMonoLevE, spriteset_TYCOMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_TYCORail) {
+    property {
+        name: string(STR_TYCO_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: TYCO;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_TYCORail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_TYCOMono) {
+    property {
+        name: string(STR_TYCO_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: TYCO;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_TYCOMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_TYCOLev) {
+    property {
+        name: string(STR_TYCO_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: TYCO;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_TYCOMonoLev;
+    }
+	}
+/*-PLNT-*/
+	spriteset(spriteset_PLNTRailE, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_rail(1418) }
+	
+	spriteset(spriteset_PLNTRailL, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_rail(1443) }
+	
+	spritegroup spriteset_PLNTRail {
+    loaded:  [spriteset_PLNTRailE, spriteset_PLNTRailL];
+    loading: [spriteset_PLNTRailE, spriteset_PLNTRailL];
+	}
+	
+	spriteset(spriteset_PLNTMonoLevE, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_monoLev(1418) }
+	
+	spriteset(spriteset_PLNTMonoLevL, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_monoLev(1443) }
+	
+	spritegroup spriteset_PLNTMonoLev {
+    loaded:  [spriteset_PLNTMonoLevE, spriteset_PLNTMonoLevL];
+    loading: [spriteset_PLNTMonoLevE, spriteset_PLNTMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_PLNTRail) {
+    property {
+        name: string(STR_PLNT_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: PLNT;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_PLNTRail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_PLNTMono) {
+    property {
+        name: string(STR_PLNT_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: PLNT;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_PLNTMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_PLNTLev) {
+    property {
+        name: string(STR_PLNT_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: PLNT;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_PLNTMonoLev;
+    }
+	}
+/*-STPL-*/
+	spriteset(spriteset_STPLRailE, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_rail(1318) }
+	
+	spriteset(spriteset_STPLRailL, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_rail(1343) }
+	
+	spritegroup spriteset_STPLRail {
+    loaded:  [spriteset_STPLRailE, spriteset_STPLRailL];
+    loading: [spriteset_STPLRailE, spriteset_STPLRailL];
+	}
+	
+	spriteset(spriteset_STPLMonoLevE, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_monoLev(1318) }
+	
+	spriteset(spriteset_STPLMonoLevL, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_monoLev(1343) }
+	
+	spritegroup spriteset_STPLMonoLev {
+    loaded:  [spriteset_STPLMonoLevE, spriteset_STPLMonoLevL];
+    loading: [spriteset_STPLMonoLevE, spriteset_STPLMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_STPLRail) {
+    property {
+        name: string(STR_STPL_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: STPL;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_STPLRail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_STPLMono) {
+    property {
+        name: string(STR_STPL_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: STPL;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_STPLMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_STPLLev) {
+    property {
+        name: string(STR_STPL_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: STPL;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_STPLMonoLev;
+    }
+	}
+/*-STSW-*/
+	spriteset(spriteset_STSWRailE, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_rail(500) }
+	
+	spriteset(spriteset_STSWRailL, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_rail(525) }
+	
+	spritegroup spriteset_STSWRail {
+    loaded:  [spriteset_STSWRailE, spriteset_STSWRailL];
+    loading: [spriteset_STSWRailE, spriteset_STSWRailL];
+	}
+	
+	spriteset(spriteset_STSWMonoLevE, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_monoLev(500) }
+	
+	spriteset(spriteset_STSWMonoLevL, "gfx/FIRS_FlatBed_Wagons.png") { 
+    tmpl_monoLev(525) }
+	
+	spritegroup spriteset_STSWMonoLev {
+    loaded:  [spriteset_STSWMonoLevE, spriteset_STSWMonoLevL];
+    loading: [spriteset_STSWMonoLevE, spriteset_STSWMonoLevL];
+	}
+	
+	item(FEAT_TRAINS, cargo_STSWRail) {
+    property {
+        name: string(STR_STSW_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: RAIL;
+        default_cargo_type: STSW;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 30;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_STSWRail;
+    }
+	}
+	item(FEAT_TRAINS, cargo_STSWMono) {
+    property {
+        name: string(STR_STSW_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MONO;
+        default_cargo_type: STSW;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 35;
+        weight: 20 ton;
+		cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_STSWMonoLev;
+    }
+	}
+	item(FEAT_TRAINS, cargo_STSWLev) {
+    property {
+        name: string(STR_STSW_NAME);
+        climates_available: ALL_CLIMATES;
+        introduction_date: date(1900, 1, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+		track_type: MGLV;
+        default_cargo_type: STSW;
+        sprite_id: SPRITE_ID_NEW_TRAIN;
+        misc_flags: bitmask(TRAIN_FLAG_SPRITE_STACK);
+        cargo_capacity: 40;
+        weight: 20 ton;
+        cost_factor: 200;
+    }
+    graphics {
+        default: spriteset_STSWMonoLev;
+    }
+	}
+
 	
 	/*------------Add default wagons to all climates and remove refits if cargo exists-------------*/
 	
@@ -5376,7 +7567,8 @@ template tmpl_VEHImonoLev(y) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_57, 57) {
@@ -5389,7 +7581,8 @@ template tmpl_VEHImonoLev(y) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 		item (FEAT_TRAINS, wagon_89, 89) {
@@ -5402,7 +7595,8 @@ template tmpl_VEHImonoLev(y) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	
@@ -5417,7 +7611,8 @@ item (FEAT_TRAINS, wagon_28, 28) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 item (FEAT_TRAINS, wagon_58, 58) {
@@ -5430,7 +7625,8 @@ item (FEAT_TRAINS, wagon_58, 58) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];		
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];		
 	}
 	}
 item (FEAT_TRAINS, wagon_90, 90) {
@@ -5443,7 +7639,8 @@ item (FEAT_TRAINS, wagon_90, 90) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 
@@ -5459,7 +7656,8 @@ item (FEAT_TRAINS, wagon_90, 90) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_59, 59) {
@@ -5472,7 +7670,8 @@ item (FEAT_TRAINS, wagon_90, 90) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_91, 91) {
@@ -5485,7 +7684,8 @@ item (FEAT_TRAINS, wagon_90, 90) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	
@@ -5500,7 +7700,8 @@ item (FEAT_TRAINS, wagon_30, 30) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_60, 60) {
@@ -5513,7 +7714,8 @@ item (FEAT_TRAINS, wagon_30, 30) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_92, 92) {
@@ -5526,7 +7728,8 @@ item (FEAT_TRAINS, wagon_30, 30) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	
@@ -5542,7 +7745,8 @@ item (FEAT_TRAINS, wagon_31, 31) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_61, 61) {
@@ -5555,7 +7759,8 @@ item (FEAT_TRAINS, wagon_31, 31) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_93, 93) {
@@ -5568,7 +7773,8 @@ item (FEAT_TRAINS, wagon_31, 31) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	
@@ -5584,7 +7790,8 @@ item (FEAT_TRAINS, wagon_32, 32) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_62, 62) {
@@ -5598,7 +7805,8 @@ item (FEAT_TRAINS, wagon_32, 32) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_94, 94) {
@@ -5612,7 +7820,8 @@ item (FEAT_TRAINS, wagon_32, 32) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	
@@ -5627,7 +7836,8 @@ item (FEAT_TRAINS, wagon_33, 33) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,IORE,LVST,WOOD,MAIL,OIL_,PAPR,PASS,RUBR,STEL];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,IORE,LVST,WOOD,MAIL,OIL_,PAPR,PASS,RUBR,STEL
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_63, 63) {
@@ -5640,7 +7850,8 @@ item (FEAT_TRAINS, wagon_33, 33) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,IORE,LVST,WOOD,MAIL,OIL_,PAPR,PASS,RUBR,STEL];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,IORE,LVST,WOOD,MAIL,OIL_,PAPR,PASS,RUBR,STEL
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_95, 95) {
@@ -5653,7 +7864,8 @@ item (FEAT_TRAINS, wagon_33, 33) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,IORE,LVST,WOOD,MAIL,OIL_,PAPR,PASS,RUBR,STEL];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,IORE,LVST,WOOD,MAIL,OIL_,PAPR,PASS,RUBR,STEL
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	
@@ -5668,7 +7880,8 @@ item (FEAT_TRAINS, wagon_34, 34) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_64, 64) {
@@ -5681,7 +7894,8 @@ item (FEAT_TRAINS, wagon_34, 34) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_96, 96) {
@@ -5694,7 +7908,8 @@ item (FEAT_TRAINS, wagon_34, 34) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	
@@ -5709,7 +7924,8 @@ item (FEAT_TRAINS, wagon_35, 35) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_65, 65) {
@@ -5722,7 +7938,8 @@ item (FEAT_TRAINS, wagon_35, 35) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_97, 97) {
@@ -5735,7 +7952,8 @@ item (FEAT_TRAINS, wagon_35, 35) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	
@@ -5750,7 +7968,8 @@ item (FEAT_TRAINS, wagon_36, 36) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_66, 66) {
@@ -5763,7 +7982,8 @@ item (FEAT_TRAINS, wagon_36, 36) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_98, 98) {
@@ -5776,7 +7996,8 @@ item (FEAT_TRAINS, wagon_36, 36) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	
@@ -5791,7 +8012,8 @@ item (FEAT_TRAINS, wagon_37, 37) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_67, 67) {
@@ -5803,7 +8025,8 @@ item (FEAT_TRAINS, wagon_37, 37) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_99, 99) {
@@ -5815,7 +8038,8 @@ item (FEAT_TRAINS, wagon_37, 37) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	
@@ -5830,7 +8054,8 @@ item (FEAT_TRAINS, wagon_38, 38) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_68, 68) {
@@ -5843,7 +8068,8 @@ item (FEAT_TRAINS, wagon_38, 38) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_100, 100) {
@@ -5856,7 +8082,8 @@ item (FEAT_TRAINS, wagon_38, 38) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	
@@ -5871,7 +8098,8 @@ item (FEAT_TRAINS, wagon_39, 39) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_69, 69) {
@@ -5884,7 +8112,8 @@ item (FEAT_TRAINS, wagon_39, 39) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_101, 101) {
@@ -5897,7 +8126,8 @@ item (FEAT_TRAINS, wagon_39, 39) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	
@@ -5912,7 +8142,8 @@ item (FEAT_TRAINS, wagon_40, 40) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_70, 70) {
@@ -5925,7 +8156,8 @@ item (FEAT_TRAINS, wagon_40, 40) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_102, 102) {
@@ -5938,7 +8170,8 @@ item (FEAT_TRAINS, wagon_40, 40) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	
@@ -5953,7 +8186,8 @@ item (FEAT_TRAINS, wagon_42, 42) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_72, 72) {
@@ -5966,7 +8200,8 @@ item (FEAT_TRAINS, wagon_42, 42) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	item (FEAT_TRAINS, wagon_104, 104) {
@@ -5979,7 +8214,8 @@ item (FEAT_TRAINS, wagon_42, 42) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,RUBR,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 	
@@ -5994,7 +8230,8 @@ item (FEAT_TRAINS, wagon_43, 43) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 item (FEAT_TRAINS, wagon_73, 73) {
@@ -6007,7 +8244,8 @@ item (FEAT_TRAINS, wagon_73, 73) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}
 item (FEAT_TRAINS, wagon_105, 105) {
@@ -6020,6 +8258,7 @@ item (FEAT_TRAINS, wagon_105, 105) {
 	BEAN,CBLK,CMNT,JAVA,COKE,FECR,FERT,FISH,KAOL,LIME,LYE_,MNO2,NITR,PEAT,PHOS,IRON,POTA,PORE,QLME,SALT,SAND,SCMT,SLAG,SASH,CASS,CLAY,NUTS,GRVL,
 	BEER,POWR,ENSP,BOOM,VPTS,WOOL,ZINC,
 	STAL,ALUM,STCB,CSTI,COPR,BDMT,FMSP,GLAS,PIPE,PLAS,RBAR,STST,STSE,STSH,STWR,WDPR,TYRE,VBOD,VENG,VEHI,
-	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,STEL,WHEA,WATR];
+	COAL,CORE,DIAM,FOOD,FRUT,GOOD,GRAI,IORE,LVST,WOOD,MAIL,MAIZ,OIL_,PAPR,PASS,STEL,WHEA,WATR
+,AORE,METL,MNSP,FICR,RCYC,SGBT,SUGR,SGCN,CCPR,FEAL,FOCA,HWAR,N7__,PPWK,PUMP,ELAS,STBL,STIG,STBR,STPP,STSL,STTB,TYCO,WELD,PLNT,SEAL,STPL,STSW];
 	}
 	}

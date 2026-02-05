@@ -1,6 +1,6 @@
 ##grflangid 0x0
 STR_GRF_NAME	:{TITLE} - {VERSION}
-STR_GRF_DESC	:ATOV - Add to original vehicles. Adds new graphics for each FIRS cargo, both loaded and unloaded, that is not already in openTTD. Created to have all cargos from FIRS 4, may be missing some cargos from other FIRS versions but is still useable. Designed to be used with original vehicle set.  -  v1.1 Fixes issue with refiting missing cargos
+STR_GRF_DESC	:ATOV - Add to original vehicles. Adds new graphics for each FIRS cargo, both loaded and unloaded, that is not already in openTTD. Created to have all cargos from FIRS 4, may be missing some cargos from other FIRS versions but is still useable. Designed to be used with original vehicle set.  -  v1.1 Fixes issue with refiting missing cargos V 3.0 Added cargos from FIRS 1,2,3, and 5. v3.1 fixed but with random spritesets, and fixed missing farroalloys car.
 STR_GRF_URL		:https://github.com/kshugars/ATOV
 
 # vehicle names
@@ -15,7 +15,7 @@ STR_O2___NAME:Oxygen Tanker
 STR_COAT_NAME:Paints & Coatings Tanker
 STR_PETR_NAME:Petroleum Fuel Tanker
 STR_SULP_NAME:Sulphur Tanker
-STR_EOIL_NAME: Edible Oil Tanker
+STR_EOIL_NAME:Edible Oil Tanker
 
 STR_BEAN_NAME:Bean Hopper
 STR_CBLK_NAME:Carbon Black Hopper
@@ -74,3 +74,32 @@ STR_VBOD_NAME:Vehicle Body Car
 STR_VENG_NAME:Vehicle Engine Car
 STR_VEHI_NAME:Vehicle Car
 STR_BDMT_NAME:Building Material Car
+
+STR_AORE_NAME:Bauxite Hopper
+STR_METL_NAME:Metal Car
+STR_MNSP_NAME:Packaging Boxcar
+STR_FICR_NAME:Plant Fibres Hopper
+STR_RCYC_NAME:Recyclables Hopper
+STR_SGBT_NAME:Sugar beet Hopper
+STR_SUGR_NAME:Sugar Hopper
+STR_SGCN_NAME:Sugarcane Hopper
+STR_CCPR_NAME:Concrete Products Car
+STR_FEAL_NAME:Ferroalloys Hopper
+STR_FOCA_NAME:Forgings And Castings Boxcar
+STR_HWAR_NAME:Hardware Boxcar
+STR_N7___NAME:Nitrogen Tanker
+STR_PPWK_NAME:Pipework Boxcar
+STR_PUMP_NAME:Pumps and Valves Boxcar
+STR_ELAS_NAME:Elastomer Products Boxcar
+STR_STBL_NAME:Steel Billets And Blooms Car
+STR_STIG_NAME:Steel Ingots Car
+STR_STBR_NAME:Steel Merchant Bar Car
+STR_STPP_NAME:Steel Pipe Car
+STR_STSL_NAME:Steel Slab Car
+STR_STTB_NAME:Steel Tube Car
+STR_TYCO_NAME:Tyre Cord Car
+STR_WELD_NAME:Welding Consumables Boxcar
+STR_PLNT_NAME:Plant And Machinery Car
+STR_SEAL_NAME:Seals, Hoses And Belts Boxcar
+STR_STPL_NAME:Steel Plate Car
+STR_STSW_NAME:Structural Steel Car
