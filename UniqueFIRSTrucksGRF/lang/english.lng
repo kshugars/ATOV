@@ -1,0 +1,296 @@
+##grflangid 0x0
+STR_GRF_NAME	:{TITLE} - {VERSION}
+STR_GRF_DESC	:ATOV - Add to original vehicles. Adds new graphics for each FIRS cargo, both loaded and unloaded, that is not already in openTTD. Created to have all cargos from FIRS 1,2,3,4, and 5. Designed to be used with original vehicle set.
+STR_GRF_URL		:https://github.com/kshugars/ATOV
+
+# vehicle names
+STR_ACID_NAME1:SKLabs Acid Tanker
+STR_NH3__NAME1:SKLabs Ammonia Tanker
+STR_RFPR_NAME1:SKLabs Chemicals Tanker
+STR_CHLO_NAME1:SKLabs Chlorine Tanker
+STR_SOAP_NAME1:SKLabs Cleaning Agents Tanker
+STR_CTAR_NAME1:SKLabs Coal Tar Tanker
+STR_MILK_NAME1:SKLabs Milk Tanker
+STR_O2___NAME1:SKLabs Oxygen Tanker
+STR_COAT_NAME1:SKLabs Paints & Coatings Tanker
+STR_PETR_NAME1:SKLabs Petroleum Fuels Tanker
+STR_SULP_NAME1:SKLabs Sulphur Tanker
+STR_EOIL_NAME1:SKLabs Edible Oil Tanker
+STR_N7___NAME1:SKLabs Nitrogen Tanker
+STR_BEER_NAME1:SKLabs Alcohol Truck
+STR_POWR_NAME1:SKLabs Electrical Parts Truck
+STR_ENSP_NAME1:SKLabs Engineering Supplies Truck
+STR_BOOM_NAME1:SKLabs Explosives Truck
+STR_VPTS_NAME1:SKLabs Vehicle Parts Truck
+STR_WOOL_NAME1:SKLabs Wool Truck
+STR_ZINC_NAME1:SKLabs Zinc Truck
+STR_MNSP_NAME1:SKLabs Packaging Truck
+STR_FOCA_NAME1:SKLabs Forgings & Castings Truck
+STR_HWAR_NAME1:SKLabs Hardware Truck
+STR_PUMP_NAME1:SKLabs Pumps & Valves Truck
+STR_SEAL_NAME1:SKLabs Seals, Hoses & Belts Truck
+STR_ELAS_NAME1:SKLabs Seals, Hoses & Belts Truck
+STR_WELD_NAME1:SKLabs Welding Consumables Truck
+STR_PPWK_NAME1:SKLabs Pipework Truck
+STR_BEAN_NAME1:SKLabs Beans Truck
+STR_CBLK_NAME1:SKLabs Carbon Black Truck
+STR_CMNT_NAME1:SKLabs Cement Truck
+STR_JAVA_NAME1:SKLabs Coffee Truck
+STR_COKE_NAME1:SKLabs Coke Truck
+STR_FECR_NAME1:SKLabs Ferrochrome Truck
+STR_FERT_NAME1:SKLabs Fertiliser Truck
+STR_FISH_NAME1:SKLabs Fish Truck
+STR_KAOL_NAME1:SKLabs China Clay Truck
+STR_LIME_NAME1:SKLabs Limestone Truck
+STR_LYE__NAME1:SKLabs Sodium Hydroxide Truck
+STR_MNO2_NAME1:SKLabs Manganese Truck
+STR_NITR_NAME1:SKLabs Nitrates Truck
+STR_PEAT_NAME1:SKLabs Peat Truck
+STR_PHOS_NAME1:SKLabs Phosphate Truck
+STR_IRON_NAME1:SKLabs Pig Iron Truck
+STR_POTA_NAME1:SKLabs Potash Truck
+STR_PORE_NAME1:SKLabs Pyrite Ore Truck
+STR_QLME_NAME1:SKLabs Quicklime Truck
+STR_SALT_NAME1:SKLabs Salt Truck
+STR_SAND_NAME1:SKLabs Sand Truck
+STR_SCMT_NAME1:SKLabs Scrap Metal Truck
+STR_SLAG_NAME1:SKLabs Slag Truck
+STR_SASH_NAME1:SKLabs Soda Ash Truck
+STR_CASS_NAME1:SKLabs Cassava Truck
+STR_CLAY_NAME1:SKLabs Clay Truck
+STR_NUTS_NAME1:SKLabs Nuts Truck
+STR_GRVL_NAME1:SKLabs Stone Truck
+STR_AORE_NAME1:SKLabs Bauxite Truck
+STR_FICR_NAME1:SKLabs Plant Fibres Truck
+STR_RCYC_NAME1:SKLabs Recyclables Truck
+STR_SGBT_NAME1:SKLabs Sugar Beet Truck
+STR_SUGR_NAME1:SKLabs Sugar Truck
+STR_SGCN_NAME1:SKLabs Sugarcane Truck
+STR_FEAL_NAME1:SKLabs Ferroalloys Truck
+STR_STAL_NAME1:SKLabs Alloy Steel Truck
+STR_ALUM_NAME1:SKLabs Aluminium Truck
+STR_STCB_NAME1:SKLabs Carbon Steel Truck
+STR_CSTI_NAME1:SKLabs Cast Iron Truck
+STR_COPR_NAME1:SKLabs Copper Truck
+STR_GLAS_NAME1:SKLabs Glass Truck
+STR_PIPE_NAME1:SKLabs Pipe Truck
+STR_STPP_NAME1:SKLabs Steel Pipe Truck
+STR_PLAS_NAME1:SKLabs Plastics Truck
+STR_RBAR_NAME1:SKLabs Rebar Truck
+STR_STST_NAME1:SKLabs Stainless Steel Truck
+STR_STSE_NAME1:SKLabs Steel Sections Truck
+STR_STSW_NAME1:SKLabs Structural Steel Truck
+STR_STSH_NAME1:SKLabs Steel Sheet Truck
+STR_STWR_NAME1:SKLabs Steel Wire Rod Truck
+STR_WDPR_NAME1:SKLabs Timber Truck
+STR_TYRE_NAME1:SKLabs Tyres Truck
+STR_VBOD_NAME1:SKLabs Vehicle Bodies Truck
+STR_VENG_NAME1:SKLabs Vehicle Engines Truck
+STR_FMSP_NAME1:SKLabs Farm Supplies Truck
+STR_VEHI_NAME1:SKLabs Vehicles Truck
+STR_BDMT_NAME1:SKLabs Building Materials Truck
+STR_METL_NAME1:SKLabs Metal Truck
+STR_STIG_NAME1:SKLabs Steel Ingots Truck
+STR_STSL_NAME1:SKLabs Steel Slab Truck
+STR_STTB_NAME1:SKLabs Steel Tube Truck
+STR_STPL_NAME1:SKLabs Steel Plate Truck
+STR_TYCO_NAME1:SKLabs Tyre Cord Truck
+STR_PLNT_NAME1:SKLabs Plant & Machinery Truck
+STR_STBL_NAME1:SKLabs Steel Billets & Blooms Truck
+STR_STBR_NAME1:SKLabs Steel Merchant Bar Truck
+STR_CCPR_NAME1:SKLabs Concrete Products Truck
+
+
+STR_ACID_NAME2:SKLabs MK2 Acid Tanker
+STR_NH3__NAME2:SKLabs MK2 Ammonia Tanker
+STR_RFPR_NAME2:SKLabs MK2 Chemicals Tanker
+STR_CHLO_NAME2:SKLabs MK2 Chlorine Tanker
+STR_SOAP_NAME2:SKLabs MK2 Cleaning Agents Tanker
+STR_CTAR_NAME2:SKLabs MK2 Coal Tar Tanker
+STR_MILK_NAME2:SKLabs MK2 Milk Tanker
+STR_O2___NAME2:SKLabs MK2 Oxygen Tanker
+STR_COAT_NAME2:SKLabs MK2 Paints & Coatings Tanker
+STR_PETR_NAME2:SKLabs MK2 Petroleum Fuels Tanker
+STR_SULP_NAME2:SKLabs MK2 Sulphur Tanker
+STR_EOIL_NAME2:SKLabs MK2 Edible Oil Tanker
+STR_N7___NAME2:SKLabs MK2 Nitrogen Tanker
+STR_BEER_NAME2:SKLabs MK2 Alcohol Truck
+STR_POWR_NAME2:SKLabs MK2 Electrical Parts Truck
+STR_ENSP_NAME2:SKLabs MK2 Engineering Supplies Truck
+STR_BOOM_NAME2:SKLabs MK2 Explosives Truck
+STR_VPTS_NAME2:SKLabs MK2 Vehicle Parts Truck
+STR_WOOL_NAME2:SKLabs MK2 Wool Truck
+STR_ZINC_NAME2:SKLabs MK2 Zinc Truck
+STR_MNSP_NAME2:SKLabs MK2 Packaging Truck
+STR_FOCA_NAME2:SKLabs MK2 Forgings & Castings Truck
+STR_HWAR_NAME2:SKLabs MK2 Hardware Truck
+STR_PUMP_NAME2:SKLabs MK2 Pumps & Valves Truck
+STR_SEAL_NAME2:SKLabs MK2 Seals, Hoses & Belts Truck
+STR_ELAS_NAME2:SKLabs MK2 Seals, Hoses & Belts Truck
+STR_WELD_NAME2:SKLabs MK2 Welding Consumables Truck
+STR_PPWK_NAME2:SKLabs MK2 Pipework Truck
+STR_BEAN_NAME2:SKLabs MK2 Beans Truck
+STR_CBLK_NAME2:SKLabs MK2 Carbon Black Truck
+STR_CMNT_NAME2:SKLabs MK2 Cement Truck
+STR_JAVA_NAME2:SKLabs MK2 Coffee Truck
+STR_COKE_NAME2:SKLabs MK2 Coke Truck
+STR_FECR_NAME2:SKLabs MK2 Ferrochrome Truck
+STR_FERT_NAME2:SKLabs MK2 Fertiliser Truck
+STR_FISH_NAME2:SKLabs MK2 Fish Truck
+STR_KAOL_NAME2:SKLabs MK2 China Clay Truck
+STR_LIME_NAME2:SKLabs MK2 Limestone Truck
+STR_LYE__NAME2:SKLabs MK2 Sodium Hydroxide Truck
+STR_MNO2_NAME2:SKLabs MK2 Manganese Truck
+STR_NITR_NAME2:SKLabs MK2 Nitrates Truck
+STR_PEAT_NAME2:SKLabs MK2 Peat Truck
+STR_PHOS_NAME2:SKLabs MK2 Phosphate Truck
+STR_IRON_NAME2:SKLabs MK2 Pig Iron Truck
+STR_POTA_NAME2:SKLabs MK2 Potash Truck
+STR_PORE_NAME2:SKLabs MK2 Pyrite Ore Truck
+STR_QLME_NAME2:SKLabs MK2 Quicklime Truck
+STR_SALT_NAME2:SKLabs MK2 Salt Truck
+STR_SAND_NAME2:SKLabs MK2 Sand Truck
+STR_SCMT_NAME2:SKLabs MK2 Scrap Metal Truck
+STR_SLAG_NAME2:SKLabs MK2 Slag Truck
+STR_SASH_NAME2:SKLabs MK2 Soda Ash Truck
+STR_CASS_NAME2:SKLabs MK2 Cassava Truck
+STR_CLAY_NAME2:SKLabs MK2 Clay Truck
+STR_NUTS_NAME2:SKLabs MK2 Nuts Truck
+STR_GRVL_NAME2:SKLabs MK2 Stone Truck
+STR_AORE_NAME2:SKLabs MK2 Bauxite Truck
+STR_FICR_NAME2:SKLabs MK2 Plant Fibres Truck
+STR_RCYC_NAME2:SKLabs MK2 Recyclables Truck
+STR_SGBT_NAME2:SKLabs MK2 Sugar Beet Truck
+STR_SUGR_NAME2:SKLabs MK2 Sugar Truck
+STR_SGCN_NAME2:SKLabs MK2 Sugarcane Truck
+STR_FEAL_NAME2:SKLabs MK2 Ferroalloys Truck
+STR_STAL_NAME2:SKLabs MK2 Alloy Steel Truck
+STR_ALUM_NAME2:SKLabs MK2 Aluminium Truck
+STR_STCB_NAME2:SKLabs MK2 Carbon Steel Truck
+STR_CSTI_NAME2:SKLabs MK2 Cast Iron Truck
+STR_COPR_NAME2:SKLabs MK2 Copper Truck
+STR_GLAS_NAME2:SKLabs MK2 Glass Truck
+STR_PIPE_NAME2:SKLabs MK2 Pipe Truck
+STR_STPP_NAME2:SKLabs MK2 Steel Pipe Truck
+STR_PLAS_NAME2:SKLabs MK2 Plastics Truck
+STR_RBAR_NAME2:SKLabs MK2 Rebar Truck
+STR_STST_NAME2:SKLabs MK2 Stainless Steel Truck
+STR_STSE_NAME2:SKLabs MK2 Steel Sections Truck
+STR_STSW_NAME2:SKLabs MK2 Structural Steel Truck
+STR_STSH_NAME2:SKLabs MK2 Steel Sheet Truck
+STR_STWR_NAME2:SKLabs MK2 Steel Wire Rod Truck
+STR_WDPR_NAME2:SKLabs MK2 Timber Truck
+STR_TYRE_NAME2:SKLabs MK2 Tyres Truck
+STR_VBOD_NAME2:SKLabs MK2 Vehicle Bodies Truck
+STR_VENG_NAME2:SKLabs MK2 Vehicle Engines Truck
+STR_FMSP_NAME2:SKLabs MK2 Farm Supplies Truck
+STR_VEHI_NAME2:SKLabs MK2 Vehicles Truck
+STR_BDMT_NAME2:SKLabs MK2 Building Materials Truck
+STR_METL_NAME2:SKLabs MK2 Metal Truck
+STR_STIG_NAME2:SKLabs MK2 Steel Ingots Truck
+STR_STSL_NAME2:SKLabs MK2 Steel Slab Truck
+STR_STTB_NAME2:SKLabs MK2 Steel Tube Truck
+STR_STPL_NAME2:SKLabs MK2 Steel Plate Truck
+STR_TYCO_NAME2:SKLabs MK2 Tyre Cord Truck
+STR_PLNT_NAME2:SKLabs MK2 Plant & Machinery Truck
+STR_STBL_NAME2:SKLabs MK2 Steel Billets & Blooms Truck
+STR_STBR_NAME2:SKLabs MK2 Steel Merchant Bar Truck
+STR_CCPR_NAME2:SKLabs MK2 Concrete Products Truck
+
+STR_ACID_NAME3:SKLabs MK3 Acid Tanker
+STR_NH3__NAME3:SKLabs MK3 Ammonia Tanker
+STR_RFPR_NAME3:SKLabs MK3 Chemicals Tanker
+STR_CHLO_NAME3:SKLabs MK3 Chlorine Tanker
+STR_SOAP_NAME3:SKLabs MK3 Cleaning Agents Tanker
+STR_CTAR_NAME3:SKLabs MK3 Coal Tar Tanker
+STR_MILK_NAME3:SKLabs MK3 Milk Tanker
+STR_O2___NAME3:SKLabs MK3 Oxygen Tanker
+STR_COAT_NAME3:SKLabs MK3 Paints & Coatings Tanker
+STR_PETR_NAME3:SKLabs MK3 Petroleum Fuels Tanker
+STR_SULP_NAME3:SKLabs MK3 Sulphur Tanker
+STR_EOIL_NAME3:SKLabs MK3 Edible Oil Tanker
+STR_N7___NAME3:SKLabs MK3 Nitrogen Tanker
+STR_BEER_NAME3:SKLabs MK3 Alcohol Truck
+STR_POWR_NAME3:SKLabs MK3 Electrical Parts Truck
+STR_ENSP_NAME3:SKLabs MK3 Engineering Supplies Truck
+STR_BOOM_NAME3:SKLabs MK3 Explosives Truck
+STR_VPTS_NAME3:SKLabs MK3 Vehicle Parts Truck
+STR_WOOL_NAME3:SKLabs MK3 Wool Truck
+STR_ZINC_NAME3:SKLabs MK3 Zinc Truck
+STR_MNSP_NAME3:SKLabs MK3 Packaging Truck
+STR_FOCA_NAME3:SKLabs MK3 Forgings & Castings Truck
+STR_HWAR_NAME3:SKLabs MK3 Hardware Truck
+STR_PUMP_NAME3:SKLabs MK3 Pumps & Valves Truck
+STR_SEAL_NAME3:SKLabs MK3 Seals, Hoses & Belts Truck
+STR_ELAS_NAME3:SKLabs MK3 Seals, Hoses & Belts Truck
+STR_WELD_NAME3:SKLabs MK3 Welding Consumables Truck
+STR_PPWK_NAME3:SKLabs MK3 Pipework Truck
+STR_BEAN_NAME3:SKLabs MK3 Beans Truck
+STR_CBLK_NAME3:SKLabs MK3 Carbon Black Truck
+STR_CMNT_NAME3:SKLabs MK3 Cement Truck
+STR_JAVA_NAME3:SKLabs MK3 Coffee Truck
+STR_COKE_NAME3:SKLabs MK3 Coke Truck
+STR_FECR_NAME3:SKLabs MK3 Ferrochrome Truck
+STR_FERT_NAME3:SKLabs MK3 Fertiliser Truck
+STR_FISH_NAME3:SKLabs MK3 Fish Truck
+STR_KAOL_NAME3:SKLabs MK3 China Clay Truck
+STR_LIME_NAME3:SKLabs MK3 Limestone Truck
+STR_LYE__NAME3:SKLabs MK3 Sodium Hydroxide Truck
+STR_MNO2_NAME3:SKLabs MK3 Manganese Truck
+STR_NITR_NAME3:SKLabs MK3 Nitrates Truck
+STR_PEAT_NAME3:SKLabs MK3 Peat Truck
+STR_PHOS_NAME3:SKLabs MK3 Phosphate Truck
+STR_IRON_NAME3:SKLabs MK3 Pig Iron Truck
+STR_POTA_NAME3:SKLabs MK3 Potash Truck
+STR_PORE_NAME3:SKLabs MK3 Pyrite Ore Truck
+STR_QLME_NAME3:SKLabs MK3 Quicklime Truck
+STR_SALT_NAME3:SKLabs MK3 Salt Truck
+STR_SAND_NAME3:SKLabs MK3 Sand Truck
+STR_SCMT_NAME3:SKLabs MK3 Scrap Metal Truck
+STR_SLAG_NAME3:SKLabs MK3 Slag Truck
+STR_SASH_NAME3:SKLabs MK3 Soda Ash Truck
+STR_CASS_NAME3:SKLabs MK3 Cassava Truck
+STR_CLAY_NAME3:SKLabs MK3 Clay Truck
+STR_NUTS_NAME3:SKLabs MK3 Nuts Truck
+STR_GRVL_NAME3:SKLabs MK3 Stone Truck
+STR_AORE_NAME3:SKLabs MK3 Bauxite Truck
+STR_FICR_NAME3:SKLabs MK3 Plant Fibres Truck
+STR_RCYC_NAME3:SKLabs MK3 Recyclables Truck
+STR_SGBT_NAME3:SKLabs MK3 Sugar Beet Truck
+STR_SUGR_NAME3:SKLabs MK3 Sugar Truck
+STR_SGCN_NAME3:SKLabs MK3 Sugarcane Truck
+STR_FEAL_NAME3:SKLabs MK3 Ferroalloys Truck
+STR_STAL_NAME3:SKLabs MK3 Alloy Steel Truck
+STR_ALUM_NAME3:SKLabs MK3 Aluminium Truck
+STR_STCB_NAME3:SKLabs MK3 Carbon Steel Truck
+STR_CSTI_NAME3:SKLabs MK3 Cast Iron Truck
+STR_COPR_NAME3:SKLabs MK3 Copper Truck
+STR_GLAS_NAME3:SKLabs MK3 Glass Truck
+STR_PIPE_NAME3:SKLabs MK3 Pipe Truck
+STR_STPP_NAME3:SKLabs MK3 Steel Pipe Truck
+STR_PLAS_NAME3:SKLabs MK3 Plastics Truck
+STR_RBAR_NAME3:SKLabs MK3 Rebar Truck
+STR_STST_NAME3:SKLabs MK3 Stainless Steel Truck
+STR_STSE_NAME3:SKLabs MK3 Steel Sections Truck
+STR_STSW_NAME3:SKLabs MK3 Structural Steel Truck
+STR_STSH_NAME3:SKLabs MK3 Steel Sheet Truck
+STR_STWR_NAME3:SKLabs MK3 Steel Wire Rod Truck
+STR_WDPR_NAME3:SKLabs MK3 Timber Truck
+STR_TYRE_NAME3:SKLabs MK3 Tyres Truck
+STR_VBOD_NAME3:SKLabs MK3 Vehicle Bodies Truck
+STR_VENG_NAME3:SKLabs MK3 Vehicle Engines Truck
+STR_FMSP_NAME3:SKLabs MK3 Farm Supplies Truck
+STR_VEHI_NAME3:SKLabs MK3 Vehicles Truck
+STR_BDMT_NAME3:SKLabs MK3 Building Materials Truck
+STR_METL_NAME3:SKLabs MK3 Metal Truck
+STR_STIG_NAME3:SKLabs MK3 Steel Ingots Truck
+STR_STSL_NAME3:SKLabs MK3 Steel Slab Truck
+STR_STTB_NAME3:SKLabs MK3 Steel Tube Truck
+STR_STPL_NAME3:SKLabs MK3 Steel Plate Truck
+STR_TYCO_NAME3:SKLabs MK3 Tyre Cord Truck
+STR_PLNT_NAME3:SKLabs MK3 Plant & Machinery Truck
+STR_STBL_NAME3:SKLabs MK3 Steel Billets & Blooms Truck
+STR_STBR_NAME3:SKLabs MK3 Steel Merchant Bar Truck
+STR_CCPR_NAME3:SKLabs MK3 Concrete Products Truck
+
+

@@ -1,6 +1,7 @@
 ##grflangid 0x0
 STR_GRF_NAME	:{TITLE} - {VERSION}
-STR_GRF_DESC	:ATOV - Add to original vehicles. Adds new graphics for each FIRS cargo, both loaded and unloaded, that is not already in openTTD. Created to have all cargos from FIRS 4, may be missing some cargos from other FIRS versions but is still useable. Designed to be used with original vehicle set.  -  v1.1 Fixes issue with refiting missing cargos v3.0 Added cargos from FIRS 1,2,3, and 5. v3.1 fixed but with random spritesets, and fixed missing farroalloys car. v3.1 fixed missing farroallows car. v3.2 fixed graphical glitch with some tankers and hoppers.
+STR_GRF_DESC	:ATOV - Add to original vehicles. Adds new graphics for each FIRS cargo, both loaded and unloaded, that is not already in openTTD. Created to have all cargos from FIRS 1 - 5. Designed to be used with original vehicle set.
+STR_GRF_CHANGELOG :"3.3 more graphical glitch fixes\0A3.2 fixed graphical glitch with some tankers and hoppers\0A3.1 fixed bug with random spritesets and fixed missing ferroalloys car\0A3.0 Added cargos from FIRS 1,2,3 and 5\0A1.1 Fixes issue with refitting missing cargos"
 STR_GRF_URL		:https://github.com/kshugars/ATOV
 
 # vehicle names
