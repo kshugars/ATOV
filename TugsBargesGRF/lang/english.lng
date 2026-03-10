@@ -6,5 +6,10 @@ STR_GRF_URL		:https://github.com/kshugars/ATOV
 # vehicle names
 STR_WT1_NAME  :SKLabs Lumber Tug
 STR_WT2_NAME  :SKLabs Lumber Tug MK2
+STR_WT3_NAME  :SKLabs Lumber Tug MK3
 STR_BT1_NAME  :SKLabs Barge Pusher
 STR_BT2_NAME  :SKLabs Barge Pusher MK2
+STR_BT3_NAME  :SKLabs Barge Pusher MK3
+
+
+

@@ -8,7 +8,8 @@ grf {
 	
 	cargotable{
     COAL, GRAI, IORE, CORE, WHEA, MAIZ, SUGR, FRUT,
-    WOOD
+    WOOD,
+GRVL,AORE,BEAN,BDMT,CASS,CMNT,KAOL,CLAY,COKE,FEAL,FECR,FERT,LIME,MNO2,NITR,PEAT,PHOS,FICR,PORE,QLME,RCYC,SALT,SAND,SCMT,SLAG,SASH,SGBT,SGCN,SULP
 }
 
 	/*Lumber1*/
@@ -49,9 +50,10 @@ property{
         model_life: 70;
         vehicle_life: 30;
         loading_speed: 10;
-        cost_factor: 100;
-        running_cost_factor: 60;
-        speed: 20 km/h;
+        cost_factor: 60;
+        running_cost_factor: 40;
+        speed: 24 km/h;
+	ocean_speed_fraction: 0.7;
         cargo_capacity: 100;
         climates_available: ALL_CLIMATES;
         default_cargo_type: WOOD;
@@ -64,7 +66,8 @@ property{
 		}
 	}
 	
-		/*Lumber2*/
+		
+/*Lumber2*/
 	
 spriteset(spriteset_LumberTug2Empty, "gfx/LumberTug2Empty.png") {
     //left_x, upper_y, width, height, offset_x, offset_y
@@ -98,13 +101,14 @@ spriteset(spriteset_LumberTug2Empty, "gfx/LumberTug2Empty.png") {
 item(FEAT_SHIPS, item_LumberTug2) {
 property{
         name: string(STR_WT2_NAME);
-        introduction_date: date(1960, 05, 1);
-        model_life: VEHICLE_NEVER_EXPIRES;
+        introduction_date: date(1957, 05, 1);
+        model_life: 30;
         vehicle_life: 30;
         loading_speed: 10;
-        cost_factor: 150;
-        running_cost_factor: 130;
+        cost_factor: 80;
+        running_cost_factor: 60;
         speed: 45 km/h;
+	ocean_speed_fraction: 0.7;
         cargo_capacity: 170;
         climates_available: ALL_CLIMATES;
         default_cargo_type: WOOD;
@@ -116,7 +120,61 @@ property{
         default: spriteset_LumberTug2;
 		}
 	}
+
+	/*Lumber3*/
 	
+spriteset(spriteset_LumberTug3Empty, "gfx/LumberTug3Empty.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        16,    23,      -8,      -11]
+    [ 17,     0,       29,    22,     -29,       -0]
+    [ 47,     0,       33,    19,     -16,       -9]
+    [ 81,     0,       28,    18,      -0,       -0]
+    [ 110,    0,        16,    20,      -8,      -10]
+    [ 127,    0,       28,    18,     -28,       -0]
+    [ 156,    0,       33,    19,     -16,       -9]
+    [ 190,    0,       29,    22,      -0,       -0]
+	}
+	
+	spriteset(spriteset_LumberTug3Full, "gfx/LumberTug3Full.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        16,    47,      -8,      -17]
+    [ 17,     0,       55,    35,     -55,       -0]
+    [ 73,     0,       71,    19,     -35,       -9]
+    [ 145,     0,       49,    31,      -0,       -0]
+    [ 195,    0,        16,    36,      -8,      -18]
+    [ 212,    0,       49,    31,     -49,       -0]
+    [ 262,    0,       71,    19,     -45,       -9]
+    [ 334,    0,       55,    35,      -0,       -0]
+	}
+	
+	spritegroup spriteset_LumberTug3 {
+    loaded:  [spriteset_LumberTug3Empty, spriteset_LumberTug3Full];
+    loading: [spriteset_LumberTug3Empty, spriteset_LumberTug3Full];
+	}
+	
+item(FEAT_SHIPS, item_LumberTug3) {
+property{
+        name: string(STR_WT3_NAME);
+        introduction_date: date(1969, 07, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        vehicle_life: 30;
+        loading_speed: 10;
+        cost_factor: 80;
+        running_cost_factor: 60;
+        speed: 52 km/h;
+	ocean_speed_fraction: 0.7;
+        cargo_capacity: 170;
+        climates_available: ALL_CLIMATES;
+        default_cargo_type: WOOD;
+        sprite_id: SPRITE_ID_NEW_SHIP;
+		sound_effect: SOUND_DEPARTURE_CARGO_SHIP;
+		sound_effect: 	SOUND_BREAKDOWN_TRAIN_SHIP;
+		}
+	    graphics {
+        default: spriteset_LumberTug3;
+		}
+	}
+
 	/*Barge1*/
 	
 template tmpl_Barge1(y) {
@@ -182,28 +240,226 @@ template tmpl_Barge1(y) {
 	spritegroup spritegroup_Barge1Default{
     loaded: [spriteset_Barge1, spriteset_Barge1DefaultFull];
     loading: [spriteset_Barge1, spriteset_Barge1DefaultFull];}
+
+/*-GRVL-*/
+	spriteset(spriteset_Barge1GRVLFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(266) }
+	
+	spritegroup spritegroup_Barge1GRVL{
+    loaded: [spriteset_Barge1, spriteset_Barge1GRVLFull];
+    loading: [spriteset_Barge1, spriteset_Barge1GRVLFull];}
+
+
+/*-BEAN-*/
+	spriteset(spriteset_Barge1BEANFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(304) }
+	
+	spritegroup spritegroup_Barge1BEAN{
+    loaded: [spriteset_Barge1, spriteset_Barge1BEANFull];
+    loading: [spriteset_Barge1, spriteset_Barge1BEANFull];}
+
+/*-BDMT-*/
+	spriteset(spriteset_Barge1BDMTFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(342) }
+	
+	spritegroup spritegroup_Barge1BDMT{
+    loaded: [spriteset_Barge1, spriteset_Barge1BDMTFull];
+    loading: [spriteset_Barge1, spriteset_Barge1BDMTFull];}
+
+/*-CASS-*/
+	spriteset(spriteset_Barge1CASSFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(380) }
+	
+	spritegroup spritegroup_Barge1CASS{
+    loaded: [spriteset_Barge1, spriteset_Barge1CASSFull];
+    loading: [spriteset_Barge1, spriteset_Barge1CASSFull];}
+
+/*-CMNT-*/
+	spriteset(spriteset_Barge1CMNTFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(418) }
+	
+	spritegroup spritegroup_Barge1CMNT{
+    loaded: [spriteset_Barge1, spriteset_Barge1CMNTFull];
+    loading: [spriteset_Barge1, spriteset_Barge1CMNTFull];}
+
+/*-KAOL-*/
+	spriteset(spriteset_Barge1KAOLFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(456) }
+	
+	spritegroup spritegroup_Barge1KAOL{
+    loaded: [spriteset_Barge1, spriteset_Barge1KAOLFull];
+    loading: [spriteset_Barge1, spriteset_Barge1KAOLFull];}
+
+/*-CLAY-*/
+	spriteset(spriteset_Barge1CLAYFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(494) }
+	
+	spritegroup spritegroup_Barge1CLAY{
+    loaded: [spriteset_Barge1, spriteset_Barge1CLAYFull];
+    loading: [spriteset_Barge1, spriteset_Barge1CLAYFull];}
+
+
+/*-COKE-*/
+	spriteset(spriteset_Barge1COKEFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(532) }
+	
+	spritegroup spritegroup_Barge1COKE{
+    loaded: [spriteset_Barge1, spriteset_Barge1COKEFull];
+    loading: [spriteset_Barge1, spriteset_Barge1COKEFull];}
+
+
+/*-FEAL-*/
+	spriteset(spriteset_Barge1FEALFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(570) }
+	
+	spritegroup spritegroup_Barge1FEAL{
+    loaded: [spriteset_Barge1, spriteset_Barge1FEALFull];
+    loading: [spriteset_Barge1, spriteset_Barge1FEALFull];}
+
+/*-FECR-*/
+	spriteset(spriteset_Barge1FECRFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(608) }
+	
+	spritegroup spritegroup_Barge1FECR{
+    loaded: [spriteset_Barge1, spriteset_Barge1FECRFull];
+    loading: [spriteset_Barge1, spriteset_Barge1FECRFull];}
+
+/*-FERT-*/
+	spriteset(spriteset_Barge1FERTFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(646) }
+	
+	spritegroup spritegroup_Barge1FERT{
+    loaded: [spriteset_Barge1, spriteset_Barge1FERTFull];
+    loading: [spriteset_Barge1, spriteset_Barge1FERTFull];}
+
+
+
+/*-LIME-*/
+	spriteset(spriteset_Barge1LIMEFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(684) }
+	
+	spritegroup spritegroup_Barge1LIME{
+    loaded: [spriteset_Barge1, spriteset_Barge1LIMEFull];
+    loading: [spriteset_Barge1, spriteset_Barge1LIMEFull];}
+
+
+
+/*-PEAT-*/
+	spriteset(spriteset_Barge1PEATFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(722) }
+	
+	spritegroup spritegroup_Barge1PEAT{
+    loaded: [spriteset_Barge1, spriteset_Barge1PEATFull];
+    loading: [spriteset_Barge1, spriteset_Barge1PEATFull];}
+
+/*-PHOS-*/
+	spriteset(spriteset_Barge1PHOSFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(760) }
+	
+	spritegroup spritegroup_Barge1PHOS{
+    loaded: [spriteset_Barge1, spriteset_Barge1PHOSFull];
+    loading: [spriteset_Barge1, spriteset_Barge1PHOSFull];}
+
+/*-FICR-*/
+	spriteset(spriteset_Barge1FICRFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(798) }
+	
+	spritegroup spritegroup_Barge1FICR{
+    loaded: [spriteset_Barge1, spriteset_Barge1FICRFull];
+    loading: [spriteset_Barge1, spriteset_Barge1FICRFull];}
+
+/*-PORE-*/
+	spriteset(spriteset_Barge1POREFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(836) }
+	
+	spritegroup spritegroup_Barge1PORE{
+    loaded: [spriteset_Barge1, spriteset_Barge1POREFull];
+    loading: [spriteset_Barge1, spriteset_Barge1POREFull];}
+
+
+/*-RCYC-*/
+	spriteset(spriteset_Barge1RCYCFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(874) }
+	
+	spritegroup spritegroup_Barge1RCYC{
+    loaded: [spriteset_Barge1, spriteset_Barge1RCYCFull];
+    loading: [spriteset_Barge1, spriteset_Barge1RCYCFull];}
+
+
+/*-SAND-*/
+	spriteset(spriteset_Barge1SANDFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(912) }
+	
+	spritegroup spritegroup_Barge1SAND{
+    loaded: [spriteset_Barge1, spriteset_Barge1SANDFull];
+    loading: [spriteset_Barge1, spriteset_Barge1SANDFull];}
+
+/*-SCMT-*/
+	spriteset(spriteset_Barge1SCMTFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(950) }
+	
+	spritegroup spritegroup_Barge1SCMT{
+    loaded: [spriteset_Barge1, spriteset_Barge1SCMTFull];
+    loading: [spriteset_Barge1, spriteset_Barge1SCMTFull];}
+
+/*-SLAG-*/
+	spriteset(spriteset_Barge1SLAGFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(988) }
+	
+	spritegroup spritegroup_Barge1SLAG{
+    loaded: [spriteset_Barge1, spriteset_Barge1SLAGFull];
+    loading: [spriteset_Barge1, spriteset_Barge1SLAGFull];}
+
+
+/*-SGBT-*/
+	spriteset(spriteset_Barge1SGBTFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(1026) }
+	
+	spritegroup spritegroup_Barge1SGBT{
+    loaded: [spriteset_Barge1, spriteset_Barge1SGBTFull];
+    loading: [spriteset_Barge1, spriteset_Barge1SGBTFull];}
+
+/*-SGCN-*/
+	spriteset(spriteset_Barge1SGCNFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(1064) }
+	
+	spritegroup spritegroup_Barge1SGCN{
+    loaded: [spriteset_Barge1, spriteset_Barge1SGCNFull];
+    loading: [spriteset_Barge1, spriteset_Barge1SGCNFull];}
+
+/*-SULP-*/
+	spriteset(spriteset_Barge1SULPFull, "gfx/Barge1.png") { 
+    tmpl_Barge1(1102) }
+	
+	spritegroup spritegroup_Barge1SULP{
+    loaded: [spriteset_Barge1, spriteset_Barge1SULPFull];
+    loading: [spriteset_Barge1, spriteset_Barge1SULPFull];}
+
+
 	
 	
-	item(FEAT_SHIPS, item_Barge1) {
+	item(FEAT_SHIPS, item_Barge1, 2) {
 property{
         name: string(STR_BT1_NAME);
         introduction_date: date(1919, 06, 1);
         model_life: 70;
         vehicle_life: 30;
         loading_speed: 10;
-        cost_factor: 120;
-        running_cost_factor: 110;
-        speed: 15 km/h;
+        cost_factor: 90;
+        running_cost_factor: 60;
+        speed: 26 km/h;
+	ocean_speed_fraction: 0.7;
         cargo_capacity: 180;
         climates_available: ALL_CLIMATES;
         refit_cost: 10;		
-		is_refittable: 1;
-		refittable_cargo_classes: bitmask(CC_BULK);
+	is_refittable: 1;
+	refittable_cargo_classes: bitmask(CC_BULK);
+	cargo_disallow_refit: [WOOD];
         sprite_id: SPRITE_ID_NEW_SHIP;
-		sound_effect: SOUND_DEPARTURE_CARGO_SHIP;
-		sound_effect: 	SOUND_BREAKDOWN_TRAIN_SHIP;
+	sound_effect: SOUND_DEPARTURE_CARGO_SHIP;
+	sound_effect: 	SOUND_BREAKDOWN_TRAIN_SHIP;
 		}
-	    graphics {
+	graphics {
 		COAL: spritegroup_Barge1Coal;
 		GRAI: spritegroup_Barge1Grain;
 		IORE: spritegroup_Barge1Ore;
@@ -212,6 +468,40 @@ property{
 		MAIZ: spritegroup_Barge1Grain; 
 		SUGR: spritegroup_Barge1Sugar;
 		FRUT: spritegroup_Barge1Fruit;
+GRVL: spritegroup_Barge1GRVL;
+AORE: spritegroup_Barge1Ore;
+BEAN: spritegroup_Barge1BEAN;
+BDMT: spritegroup_Barge1BDMT;
+CASS: spritegroup_Barge1CASS;
+CMNT: spritegroup_Barge1CMNT;
+KAOL: spritegroup_Barge1KAOL;
+CLAY: spritegroup_Barge1CLAY;
+
+COKE: spritegroup_Barge1COKE;
+
+FEAL: spritegroup_Barge1FEAL;
+FECR: spritegroup_Barge1FECR;
+FERT: spritegroup_Barge1FERT;
+
+
+LIME: spritegroup_Barge1LIME;
+MNO2: spritegroup_Barge1FECR;
+NITR: spritegroup_Barge1FECR;
+PEAT: spritegroup_Barge1PEAT;
+PHOS: spritegroup_Barge1PHOS;
+FICR: spritegroup_Barge1FICR;
+PORE: spritegroup_Barge1PORE;
+QLME: spritegroup_Barge1KAOL;
+RCYC: spritegroup_Barge1RCYC;
+SALT: spritegroup_Barge1KAOL;
+SAND: spritegroup_Barge1SAND;
+SCMT: spritegroup_Barge1SCMT;
+SLAG: spritegroup_Barge1SLAG;
+SASH: spritegroup_Barge1KAOL;
+SGBT: spritegroup_Barge1SGBT;
+SGCN: spritegroup_Barge1SGCN;
+SULP: spritegroup_Barge1SULP;
+
         default: spritegroup_Barge1Default;
 		}
 	}
@@ -282,25 +572,222 @@ property{
     loaded: [spriteset_Barge2, spriteset_Barge2DefaultFull];
     loading: [spriteset_Barge2, spriteset_Barge2DefaultFull];}
 	
+/*-GRVL-*/
+	spriteset(spriteset_Barge2GRVLFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(378) }
+	
+	spritegroup spritegroup_Barge2GRVL{
+    loaded: [spriteset_Barge2, spriteset_Barge2GRVLFull];
+    loading: [spriteset_Barge2, spriteset_Barge2GRVLFull];}
+
+
+/*-BEAN-*/
+	spriteset(spriteset_Barge2BEANFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(432) }
+	
+	spritegroup spritegroup_Barge2BEAN{
+    loaded: [spriteset_Barge2, spriteset_Barge2BEANFull];
+    loading: [spriteset_Barge2, spriteset_Barge2BEANFull];}
+
+/*-BDMT-*/
+	spriteset(spriteset_Barge2BDMTFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(486) }
+	
+	spritegroup spritegroup_Barge2BDMT{
+    loaded: [spriteset_Barge2, spriteset_Barge2BDMTFull];
+    loading: [spriteset_Barge2, spriteset_Barge2BDMTFull];}
+
+/*-CASS-*/
+	spriteset(spriteset_Barge2CASSFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(540) }
+	
+	spritegroup spritegroup_Barge2CASS{
+    loaded: [spriteset_Barge2, spriteset_Barge2CASSFull];
+    loading: [spriteset_Barge2, spriteset_Barge2CASSFull];}
+
+/*-CMNT-*/
+	spriteset(spriteset_Barge2CMNTFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(594) }
+	
+	spritegroup spritegroup_Barge2CMNT{
+    loaded: [spriteset_Barge2, spriteset_Barge2CMNTFull];
+    loading: [spriteset_Barge2, spriteset_Barge2CMNTFull];}
+
+/*-KAOL-*/
+	spriteset(spriteset_Barge2KAOLFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(648) }
+	
+	spritegroup spritegroup_Barge2KAOL{
+    loaded: [spriteset_Barge2, spriteset_Barge2KAOLFull];
+    loading: [spriteset_Barge2, spriteset_Barge2KAOLFull];}
+
+/*-CLAY-*/
+	spriteset(spriteset_Barge2CLAYFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(702) }
+	
+	spritegroup spritegroup_Barge2CLAY{
+    loaded: [spriteset_Barge2, spriteset_Barge2CLAYFull];
+    loading: [spriteset_Barge2, spriteset_Barge2CLAYFull];}
+
+
+/*-COKE-*/
+	spriteset(spriteset_Barge2COKEFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(756) }
+	
+	spritegroup spritegroup_Barge2COKE{
+    loaded: [spriteset_Barge2, spriteset_Barge2COKEFull];
+    loading: [spriteset_Barge2, spriteset_Barge2COKEFull];}
+
+
+/*-FEAL-*/
+	spriteset(spriteset_Barge2FEALFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(810) }
+	
+	spritegroup spritegroup_Barge2FEAL{
+    loaded: [spriteset_Barge2, spriteset_Barge2FEALFull];
+    loading: [spriteset_Barge2, spriteset_Barge2FEALFull];}
+
+/*-FECR-*/
+	spriteset(spriteset_Barge2FECRFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(864) }
+	
+	spritegroup spritegroup_Barge2FECR{
+    loaded: [spriteset_Barge2, spriteset_Barge2FECRFull];
+    loading: [spriteset_Barge2, spriteset_Barge2FECRFull];}
+
+/*-FERT-*/
+	spriteset(spriteset_Barge2FERTFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(918) }
+	
+	spritegroup spritegroup_Barge2FERT{
+    loaded: [spriteset_Barge2, spriteset_Barge2FERTFull];
+    loading: [spriteset_Barge2, spriteset_Barge2FERTFull];}
+
+
+
+/*-LIME-*/
+	spriteset(spriteset_Barge2LIMEFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(972) }
+	
+	spritegroup spritegroup_Barge2LIME{
+    loaded: [spriteset_Barge2, spriteset_Barge2LIMEFull];
+    loading: [spriteset_Barge2, spriteset_Barge2LIMEFull];}
+
+
+
+/*-PEAT-*/
+	spriteset(spriteset_Barge2PEATFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(1026) }
+	
+	spritegroup spritegroup_Barge2PEAT{
+    loaded: [spriteset_Barge2, spriteset_Barge2PEATFull];
+    loading: [spriteset_Barge2, spriteset_Barge2PEATFull];}
+
+/*-PHOS-*/
+	spriteset(spriteset_Barge2PHOSFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(1080) }
+	
+	spritegroup spritegroup_Barge2PHOS{
+    loaded: [spriteset_Barge2, spriteset_Barge2PHOSFull];
+    loading: [spriteset_Barge2, spriteset_Barge2PHOSFull];}
+
+/*-FICR-*/
+	spriteset(spriteset_Barge2FICRFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(1134) }
+	
+	spritegroup spritegroup_Barge2FICR{
+    loaded: [spriteset_Barge2, spriteset_Barge2FICRFull];
+    loading: [spriteset_Barge2, spriteset_Barge2FICRFull];}
+
+/*-PORE-*/
+	spriteset(spriteset_Barge2POREFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(1188) }
+	
+	spritegroup spritegroup_Barge2PORE{
+    loaded: [spriteset_Barge2, spriteset_Barge2POREFull];
+    loading: [spriteset_Barge2, spriteset_Barge2POREFull];}
+
+
+/*-RCYC-*/
+	spriteset(spriteset_Barge2RCYCFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(1242) }
+	
+	spritegroup spritegroup_Barge2RCYC{
+    loaded: [spriteset_Barge2, spriteset_Barge2RCYCFull];
+    loading: [spriteset_Barge2, spriteset_Barge2RCYCFull];}
+
+
+/*-SAND-*/
+	spriteset(spriteset_Barge2SANDFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(1296) }
+	
+	spritegroup spritegroup_Barge2SAND{
+    loaded: [spriteset_Barge2, spriteset_Barge2SANDFull];
+    loading: [spriteset_Barge2, spriteset_Barge2SANDFull];}
+
+/*-SCMT-*/
+	spriteset(spriteset_Barge2SCMTFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(1350) }
+	
+	spritegroup spritegroup_Barge2SCMT{
+    loaded: [spriteset_Barge2, spriteset_Barge2SCMTFull];
+    loading: [spriteset_Barge2, spriteset_Barge2SCMTFull];}
+
+/*-SLAG-*/
+	spriteset(spriteset_Barge2SLAGFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(1404) }
+	
+	spritegroup spritegroup_Barge2SLAG{
+    loaded: [spriteset_Barge2, spriteset_Barge2SLAGFull];
+    loading: [spriteset_Barge2, spriteset_Barge2SLAGFull];}
+
+
+/*-SGBT-*/
+	spriteset(spriteset_Barge2SGBTFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(1458) }
+	
+	spritegroup spritegroup_Barge2SGBT{
+    loaded: [spriteset_Barge2, spriteset_Barge2SGBTFull];
+    loading: [spriteset_Barge2, spriteset_Barge2SGBTFull];}
+
+/*-SGCN-*/
+	spriteset(spriteset_Barge2SGCNFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(1512) }
+	
+	spritegroup spritegroup_Barge2SGCN{
+    loaded: [spriteset_Barge2, spriteset_Barge2SGCNFull];
+    loading: [spriteset_Barge2, spriteset_Barge2SGCNFull];}
+
+/*-SULP-*/
+	spriteset(spriteset_Barge2SULPFull, "gfx/Barge2.png") { 
+    tmpl_Barge2(1566) }
+	
+	spritegroup spritegroup_Barge2SULP{
+    loaded: [spriteset_Barge2, spriteset_Barge2SULPFull];
+    loading: [spriteset_Barge2, spriteset_Barge2SULPFull];}
+
+
 	
 	item(FEAT_SHIPS, item_Barge2) {
 property{
-        name: string(STR_BT1_NAME);
+        name: string(STR_BT2_NAME);
         introduction_date: date(1952, 06, 1);
-        model_life: VEHICLE_NEVER_EXPIRES;
+        model_life: 40;
         vehicle_life: 30;
         loading_speed: 10;
-        cost_factor: 17;
-        running_cost_factor: 17;
+        cost_factor: 140;
+        running_cost_factor: 80;
         speed: 30 km/h;
+	ocean_speed_fraction: 0.7;
         cargo_capacity: 360;
         climates_available: ALL_CLIMATES;
         refit_cost: 10;		
-		is_refittable: 1;
-		refittable_cargo_classes: bitmask(CC_BULK);
+	is_refittable: 1;
+	refittable_cargo_classes: bitmask(CC_BULK);
+	cargo_disallow_refit: [WOOD];
         sprite_id: SPRITE_ID_NEW_SHIP;
-		sound_effect: SOUND_DEPARTURE_CARGO_SHIP;
-		sound_effect: 	SOUND_BREAKDOWN_TRAIN_SHIP;
+	sound_effect: SOUND_DEPARTURE_CARGO_SHIP;
+	sound_effect: 	SOUND_BREAKDOWN_TRAIN_SHIP;
 		}
 	    graphics {
 		COAL: spritegroup_Barge2Coal;
@@ -311,6 +798,367 @@ property{
 		MAIZ: spritegroup_Barge2Grain; 
 		SUGR: spritegroup_Barge2Sugar;
 		FRUT: spritegroup_Barge2Fruit;
+GRVL: spritegroup_Barge2GRVL;
+AORE: spritegroup_Barge2Ore;
+BEAN: spritegroup_Barge2BEAN;
+BDMT: spritegroup_Barge2BDMT;
+CASS: spritegroup_Barge2CASS;
+CMNT: spritegroup_Barge2CMNT;
+KAOL: spritegroup_Barge2KAOL;
+CLAY: spritegroup_Barge2CLAY;
+
+COKE: spritegroup_Barge2COKE;
+
+FEAL: spritegroup_Barge2FEAL;
+FECR: spritegroup_Barge2FECR;
+FERT: spritegroup_Barge2FERT;
+
+
+LIME: spritegroup_Barge2LIME;
+MNO2: spritegroup_Barge2FECR;
+NITR: spritegroup_Barge2FECR;
+PEAT: spritegroup_Barge2PEAT;
+PHOS: spritegroup_Barge2PHOS;
+FICR: spritegroup_Barge2FICR;
+PORE: spritegroup_Barge2PORE;
+QLME: spritegroup_Barge2KAOL;
+RCYC: spritegroup_Barge2RCYC;
+SALT: spritegroup_Barge2KAOL;
+SAND: spritegroup_Barge2SAND;
+SCMT: spritegroup_Barge2SCMT;
+SLAG: spritegroup_Barge2SLAG;
+SASH: spritegroup_Barge2KAOL;
+SGBT: spritegroup_Barge2SGBT;
+SGCN: spritegroup_Barge2SGCN;
+SULP: spritegroup_Barge2SULP;
+
         default: spritegroup_Barge2Default;
+		}
+	}
+/*Barge3*/
+	
+	template tmpl_Barge3(y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      y,        19,    53,      -9,      -26]
+    [ 20,     y,       72,    42,     -72,       -0]
+    [ 93,     y,       74,    19,     -46,       -9]
+    [ 168,     y,       73,    42,      -0,       -0]
+    [ 242,    y,        19,    52,      -9,      -26]
+    [ 262,    y,       73,    42,     -73,       -0]
+    [ 336,    y,       74,    19,     -37,       -9]
+    [ 411,    y,       72,    42,      -0,       -0]
+	}
+	
+	/*Empty*/
+	spriteset(spriteset_Barge3, "gfx/Barge3.png") { 
+    tmpl_Barge3(0) }
+	
+	/*Coal*/
+	spriteset(spriteset_Barge3CoalFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(54) }
+	
+	spritegroup spritegroup_Barge3Coal {
+    loaded: [spriteset_Barge3, spriteset_Barge3CoalFull];
+    loading: [spriteset_Barge3, spriteset_Barge3CoalFull];}
+
+	/*Ore*/
+	spriteset(spriteset_Barge3OreFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(108) }
+	
+	spritegroup spritegroup_Barge3Ore {
+    loaded: [spriteset_Barge3, spriteset_Barge3OreFull];
+    loading: [spriteset_Barge3, spriteset_Barge3OreFull];}
+	
+	/*Grain*/
+	spriteset(spriteset_Barge3GrainFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(162) }
+	
+	spritegroup spritegroup_Barge3Grain {
+    loaded: [spriteset_Barge3, spriteset_Barge3GrainFull];
+    loading: [spriteset_Barge3, spriteset_Barge3GrainFull];}
+	
+	/*Sugar*/
+	spriteset(spriteset_Barge3SugarFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(216) }
+	
+	spritegroup spritegroup_Barge3Sugar {
+    loaded: [spriteset_Barge3, spriteset_Barge3SugarFull];
+    loading: [spriteset_Barge3, spriteset_Barge3SugarFull];}
+	
+	/*Fruit*/
+	spriteset(spriteset_Barge3FruitFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(270) }
+	
+	spritegroup spritegroup_Barge3Fruit{
+    loaded: [spriteset_Barge3, spriteset_Barge3FruitFull];
+    loading: [spriteset_Barge3, spriteset_Barge3FruitFull];}
+	
+	/*Default*/
+	spriteset(spriteset_Barge3DefaultFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(324) }
+	
+	spritegroup spritegroup_Barge3Default{
+    loaded: [spriteset_Barge3, spriteset_Barge3DefaultFull];
+    loading: [spriteset_Barge3, spriteset_Barge3DefaultFull];}
+	
+/*-GRVL-*/
+	spriteset(spriteset_Barge3GRVLFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(378) }
+	
+	spritegroup spritegroup_Barge3GRVL{
+    loaded: [spriteset_Barge3, spriteset_Barge3GRVLFull];
+    loading: [spriteset_Barge3, spriteset_Barge3GRVLFull];}
+
+
+/*-BEAN-*/
+	spriteset(spriteset_Barge3BEANFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(432) }
+	
+	spritegroup spritegroup_Barge3BEAN{
+    loaded: [spriteset_Barge3, spriteset_Barge3BEANFull];
+    loading: [spriteset_Barge3, spriteset_Barge3BEANFull];}
+
+/*-BDMT-*/
+	spriteset(spriteset_Barge3BDMTFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(486) }
+	
+	spritegroup spritegroup_Barge3BDMT{
+    loaded: [spriteset_Barge3, spriteset_Barge3BDMTFull];
+    loading: [spriteset_Barge3, spriteset_Barge3BDMTFull];}
+
+/*-CASS-*/
+	spriteset(spriteset_Barge3CASSFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(540) }
+	
+	spritegroup spritegroup_Barge3CASS{
+    loaded: [spriteset_Barge3, spriteset_Barge3CASSFull];
+    loading: [spriteset_Barge3, spriteset_Barge3CASSFull];}
+
+/*-CMNT-*/
+	spriteset(spriteset_Barge3CMNTFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(594) }
+	
+	spritegroup spritegroup_Barge3CMNT{
+    loaded: [spriteset_Barge3, spriteset_Barge3CMNTFull];
+    loading: [spriteset_Barge3, spriteset_Barge3CMNTFull];}
+
+/*-KAOL-*/
+	spriteset(spriteset_Barge3KAOLFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(648) }
+	
+	spritegroup spritegroup_Barge3KAOL{
+    loaded: [spriteset_Barge3, spriteset_Barge3KAOLFull];
+    loading: [spriteset_Barge3, spriteset_Barge3KAOLFull];}
+
+/*-CLAY-*/
+	spriteset(spriteset_Barge3CLAYFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(702) }
+	
+	spritegroup spritegroup_Barge3CLAY{
+    loaded: [spriteset_Barge3, spriteset_Barge3CLAYFull];
+    loading: [spriteset_Barge3, spriteset_Barge3CLAYFull];}
+
+
+/*-COKE-*/
+	spriteset(spriteset_Barge3COKEFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(756) }
+	
+	spritegroup spritegroup_Barge3COKE{
+    loaded: [spriteset_Barge3, spriteset_Barge3COKEFull];
+    loading: [spriteset_Barge3, spriteset_Barge3COKEFull];}
+
+
+/*-FEAL-*/
+	spriteset(spriteset_Barge3FEALFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(810) }
+	
+	spritegroup spritegroup_Barge3FEAL{
+    loaded: [spriteset_Barge3, spriteset_Barge3FEALFull];
+    loading: [spriteset_Barge3, spriteset_Barge3FEALFull];}
+
+/*-FECR-*/
+	spriteset(spriteset_Barge3FECRFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(864) }
+	
+	spritegroup spritegroup_Barge3FECR{
+    loaded: [spriteset_Barge3, spriteset_Barge3FECRFull];
+    loading: [spriteset_Barge3, spriteset_Barge3FECRFull];}
+
+/*-FERT-*/
+	spriteset(spriteset_Barge3FERTFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(918) }
+	
+	spritegroup spritegroup_Barge3FERT{
+    loaded: [spriteset_Barge3, spriteset_Barge3FERTFull];
+    loading: [spriteset_Barge3, spriteset_Barge3FERTFull];}
+
+
+
+/*-LIME-*/
+	spriteset(spriteset_Barge3LIMEFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(972) }
+	
+	spritegroup spritegroup_Barge3LIME{
+    loaded: [spriteset_Barge3, spriteset_Barge3LIMEFull];
+    loading: [spriteset_Barge3, spriteset_Barge3LIMEFull];}
+
+
+
+/*-PEAT-*/
+	spriteset(spriteset_Barge3PEATFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(1026) }
+	
+	spritegroup spritegroup_Barge3PEAT{
+    loaded: [spriteset_Barge3, spriteset_Barge3PEATFull];
+    loading: [spriteset_Barge3, spriteset_Barge3PEATFull];}
+
+/*-PHOS-*/
+	spriteset(spriteset_Barge3PHOSFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(1080) }
+	
+	spritegroup spritegroup_Barge3PHOS{
+    loaded: [spriteset_Barge3, spriteset_Barge3PHOSFull];
+    loading: [spriteset_Barge3, spriteset_Barge3PHOSFull];}
+
+/*-FICR-*/
+	spriteset(spriteset_Barge3FICRFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(1134) }
+	
+	spritegroup spritegroup_Barge3FICR{
+    loaded: [spriteset_Barge3, spriteset_Barge3FICRFull];
+    loading: [spriteset_Barge3, spriteset_Barge3FICRFull];}
+
+/*-PORE-*/
+	spriteset(spriteset_Barge3POREFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(1188) }
+	
+	spritegroup spritegroup_Barge3PORE{
+    loaded: [spriteset_Barge3, spriteset_Barge3POREFull];
+    loading: [spriteset_Barge3, spriteset_Barge3POREFull];}
+
+
+/*-RCYC-*/
+	spriteset(spriteset_Barge3RCYCFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(1242) }
+	
+	spritegroup spritegroup_Barge3RCYC{
+    loaded: [spriteset_Barge3, spriteset_Barge3RCYCFull];
+    loading: [spriteset_Barge3, spriteset_Barge3RCYCFull];}
+
+
+/*-SAND-*/
+	spriteset(spriteset_Barge3SANDFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(1296) }
+	
+	spritegroup spritegroup_Barge3SAND{
+    loaded: [spriteset_Barge3, spriteset_Barge3SANDFull];
+    loading: [spriteset_Barge3, spriteset_Barge3SANDFull];}
+
+/*-SCMT-*/
+	spriteset(spriteset_Barge3SCMTFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(1350) }
+	
+	spritegroup spritegroup_Barge3SCMT{
+    loaded: [spriteset_Barge3, spriteset_Barge3SCMTFull];
+    loading: [spriteset_Barge3, spriteset_Barge3SCMTFull];}
+
+/*-SLAG-*/
+	spriteset(spriteset_Barge3SLAGFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(1404) }
+	
+	spritegroup spritegroup_Barge3SLAG{
+    loaded: [spriteset_Barge3, spriteset_Barge3SLAGFull];
+    loading: [spriteset_Barge3, spriteset_Barge3SLAGFull];}
+
+
+/*-SGBT-*/
+	spriteset(spriteset_Barge3SGBTFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(1458) }
+	
+	spritegroup spritegroup_Barge3SGBT{
+    loaded: [spriteset_Barge3, spriteset_Barge3SGBTFull];
+    loading: [spriteset_Barge3, spriteset_Barge3SGBTFull];}
+
+/*-SGCN-*/
+	spriteset(spriteset_Barge3SGCNFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(1512) }
+	
+	spritegroup spritegroup_Barge3SGCN{
+    loaded: [spriteset_Barge3, spriteset_Barge3SGCNFull];
+    loading: [spriteset_Barge3, spriteset_Barge3SGCNFull];}
+
+/*-SULP-*/
+	spriteset(spriteset_Barge3SULPFull, "gfx/Barge3.png") { 
+    tmpl_Barge3(1566) }
+	
+	spritegroup spritegroup_Barge3SULP{
+    loaded: [spriteset_Barge3, spriteset_Barge3SULPFull];
+    loading: [spriteset_Barge3, spriteset_Barge3SULPFull];}
+
+item(FEAT_SHIPS, item_Barge3) {
+property{
+        name: string(STR_BT3_NAME);
+        introduction_date: date(1971, 03, 1);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        vehicle_life: 30;
+        loading_speed: 10;
+        cost_factor: 140;
+        running_cost_factor: 80;
+        speed: 36 km/h;
+	ocean_speed_fraction: 0.7;
+        cargo_capacity: 360;
+        climates_available: ALL_CLIMATES;
+        refit_cost: 10;		
+	is_refittable: 1;
+	refittable_cargo_classes: bitmask(CC_BULK);
+	cargo_disallow_refit: [WOOD];
+        sprite_id: SPRITE_ID_NEW_SHIP;
+	sound_effect: SOUND_DEPARTURE_CARGO_SHIP;
+	sound_effect: 	SOUND_BREAKDOWN_TRAIN_SHIP;
+		}
+	    graphics {
+		COAL: spritegroup_Barge3Coal;
+		GRAI: spritegroup_Barge3Grain;
+		IORE: spritegroup_Barge3Ore;
+		CORE: spritegroup_Barge3Ore;
+		WHEA: spritegroup_Barge3Grain;
+		MAIZ: spritegroup_Barge3Grain; 
+		SUGR: spritegroup_Barge3Sugar;
+		FRUT: spritegroup_Barge3Fruit;
+GRVL: spritegroup_Barge3GRVL;
+AORE: spritegroup_Barge3Ore;
+BEAN: spritegroup_Barge3BEAN;
+BDMT: spritegroup_Barge3BDMT;
+CASS: spritegroup_Barge3CASS;
+CMNT: spritegroup_Barge3CMNT;
+KAOL: spritegroup_Barge3KAOL;
+CLAY: spritegroup_Barge3CLAY;
+
+COKE: spritegroup_Barge3COKE;
+
+FEAL: spritegroup_Barge3FEAL;
+FECR: spritegroup_Barge3FECR;
+FERT: spritegroup_Barge3FERT;
+
+
+LIME: spritegroup_Barge3LIME;
+MNO2: spritegroup_Barge3FECR;
+NITR: spritegroup_Barge3FECR;
+PEAT: spritegroup_Barge3PEAT;
+PHOS: spritegroup_Barge3PHOS;
+FICR: spritegroup_Barge3FICR;
+PORE: spritegroup_Barge3PORE;
+QLME: spritegroup_Barge3KAOL;
+RCYC: spritegroup_Barge3RCYC;
+SALT: spritegroup_Barge3KAOL;
+SAND: spritegroup_Barge3SAND;
+SCMT: spritegroup_Barge3SCMT;
+SLAG: spritegroup_Barge3SLAG;
+SASH: spritegroup_Barge3KAOL;
+SGBT: spritegroup_Barge3SGBT;
+SGCN: spritegroup_Barge3SGCN;
+SULP: spritegroup_Barge3SULP;
+
+        default: spritegroup_Barge3Default;
 		}
 	}

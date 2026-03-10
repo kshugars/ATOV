@@ -5,7 +5,8 @@ grf {
 	version: 0;
 	min_compatible_version: 0;
 	}
-	
+	cargotable{MAIL,PASS}
+
 	/* Dolphin*/
 	
 spriteset(spriteset_dolphin, "gfx/Dolphin.png") {
@@ -31,10 +32,13 @@ property{
         speed: 127 km/h;
         cargo_capacity: 110;
         climates_available: ALL_CLIMATES;
-        default_cargo_type: CC_PASSENGERS;
+        default_cargo_type: PASS;
         sprite_id: SPRITE_ID_NEW_SHIP;
 		sound_effect: SOUND_DEPARTURE_FERRY;
 		sound_effect: 	SOUND_BREAKDOWN_TRAIN_SHIP;
+		refittable_cargo_classes: CC_PASSENGERS;
+		cargo_allow_refit: [PASS];
+		cargo_disallow_refit: [MAIL];
 		}
 	    graphics {
         default: spriteset_dolphin;
@@ -61,15 +65,18 @@ property{
         model_life: VEHICLE_NEVER_EXPIRES;
         vehicle_life: 25;
         loading_speed: 10;
-        cost_factor: 210;
-        running_cost_factor: 210;
-        speed: 112 km/h;
+        cost_factor: 205;
+        running_cost_factor: 200;
+        speed: 122 km/h;
         cargo_capacity: 150;
         climates_available: ALL_CLIMATES;
-        default_cargo_type: CC_PASSENGERS;
+        default_cargo_type: PASS;
         sprite_id: SPRITE_ID_NEW_SHIP;
 		sound_effect: SOUND_DEPARTURE_FERRY;
 		sound_effect: 	SOUND_BREAKDOWN_TRAIN_SHIP;
+refittable_cargo_classes: CC_PASSENGERS;
+		cargo_allow_refit: [PASS];
+		cargo_disallow_refit: [MAIL];
 		}
 	    graphics {
         default: spriteset_orca;
@@ -112,10 +119,68 @@ property{
 		refit_cost: 10;		
 		//refittable_cargo_classes: bitmask(CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE, CC_NEO_BULK);
 		refittable_cargo_classes: ALL_NORMAL_CARGO_CLASSES;
-		non_refittable_cargo_classes: bitmask(CC_PASSENGERS,CC_LIQUID);
+		non_refittable_cargo_classes: bitmask(CC_PASSENGERS,CC_LIQUID,CC_BULK);
 		}
 	    graphics {
         default: spriteset_narwhal;
+		}
+	}
+
+		/* Minke*/
+	
+spriteset(spriteset_minkeE, "gfx/Minke.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      0,        20,    30,      -10,      -11]
+    [ 21,     0,       38,    25,     -38,       -0]
+    [ 60,     0,       40,    22,     -20,       -11]
+    [ 101,     0,       36,    29,      -0,       -0]
+    [ 138,    0,        20,    29,      -10,      -11]
+    [ 159,    0,       36,    29,     -38,       -0]
+    [ 196,    0,       40,    22,     -20,       -11]
+    [ 237,    0,       38,    25,      -0,       -0]
+	}
+
+spriteset(spriteset_minkeL, "gfx/Minke.png") {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [ 0,      31,        20,    30,      -10,      -11]
+    [ 21,     31,       38,    25,     -38,       -0]
+    [ 60,     31,       40,    22,     -20,       -11]
+    [ 101,     31,       36,    29,      -0,       -0]
+    [ 138,    31,        20,    29,      -10,      -11]
+    [ 159,    31,       36,    29,     -38,       -0]
+    [ 196,    31,       40,    22,     -20,       -11]
+    [ 237,    31,       38,    25,      -0,       -0]
+	}
+	
+	spritegroup spriteset_minke {
+    loaded:  [spriteset_minkeE, spriteset_minkeL];
+    loading: [spriteset_minkeE, spriteset_minkeL];
+	}
+	
+item(FEAT_SHIPS, item_minke) {
+property{
+        name: string(STR_MHC1_NAME);
+        introduction_date: date(1985, 10, 25);
+        model_life: VEHICLE_NEVER_EXPIRES;
+        vehicle_life: 25;
+        loading_speed: 10;
+        cost_factor: 160;
+        running_cost_factor: 175;
+        speed: 110 km/h;
+        cargo_capacity: 60;
+        climates_available: ALL_CLIMATES;
+        default_cargo_type: MAIL;
+        sprite_id: SPRITE_ID_NEW_SHIP;
+		sound_effect: SOUND_DEPARTURE_CARGO_SHIP;
+		sound_effect: 	SOUND_BREAKDOWN_TRAIN_SHIP;
+		is_refittable: 1;
+		refit_cost: 10;		
+		refittable_cargo_classes: CC_MAIL;
+		cargo_allow_refit: [MAIL];
+		cargo_disallow_refit: [PASS];
+		}
+	    graphics {
+        default: spriteset_minke;
 		}
 	}
 	
